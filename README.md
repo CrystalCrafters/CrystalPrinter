@@ -2,7 +2,7 @@
 
 The CrystalPrinter Tool is a Python software tool developed to facilitate the conversion of crystal information files (.cif) into 3D printing-ready stereolithography files (.stl). The primary goal of this project is to provide a versatile and user-friendly solution for researchers and enthusiasts in the field of crystallography and materials science.
 
-## Minimum Viable Product (MVP) Features:
+## Features:
 - **CIF File Processing**: Ability to select and import locally saved .cif files, extracting atomic positions for further processing.
 - **Unit Cell Drawing**: Capability to draw multiple unit cells, including fractional unit cells.
 - **Lattice Plane Selection**: Choice of which lattice plane sits on the built plate, providing control over the printing orientation.
@@ -10,8 +10,6 @@ The CrystalPrinter Tool is a Python software tool developed to facilitate the co
 - **Bond Rendering**: Capability to draw bonds between neighboring atoms, considering nearest-neighbor, next-nearest-neighbor, and next-next-nearest-neighbor interactions.
 - **Support Structure Integration**: Incorporation of supports required for successful 3D prints.
 - **Documentation**: Comprehensive documentation explaining the code's functionality to enable further development and potential publication.
-
-## Nice-to-Have Features:
 - **Magnetic Spin Visualization**: Ability to draw magnetic spins with user-defined directions.
 - **Lattice Representation Options**: Choice between rendering the real lattice and the reciprocal lattice.
 - **Flat Plane Drawing**: Capability of drawing flat planes representing real and reciprocal lattice planes.
