@@ -23,3 +23,4 @@ The CrystalPrinter Tool is a Python software tool developed to facilitate the co
 - [Educational resource on crystallography](https://pubs.acs.org/doi/10.1021/acs.jchemed.2c00907)
 
 For detailed instructions on installation, usage, and contribution guidelines, please refer to the project documentation. Thank you for your interest in the CrystalPrinter Tool!
+
