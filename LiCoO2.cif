@@ -1,0 +1,832 @@
+[[4m[1mMPDataDoc<SummaryDoc>[0;0m[0;0m(
+[1mbuilder_meta[0;0m=EmmetMeta(emmet_version='0.72.20', pymatgen_version='2023.11.12', pull_request=990, database_version='2023.11.1', build_date=datetime.datetime(2023, 11, 22, 19, 44, 5, 61000), license='BY-C'),
+[1mnsites[0;0m=16,
+[1melements[0;0m=[Element Co, Element Li, Element O],
+[1mnelements[0;0m=3,
+[1mcomposition[0;0m=Composition('Li4 Co4 O8'),
+[1mcomposition_reduced[0;0m=Composition('Li1 Co1 O2'),
+[1mformula_pretty[0;0m='LiCoO2',
+[1mformula_anonymous[0;0m='ABC2',
+[1mchemsys[0;0m='Co-Li-O',
+[1mvolume[0;0m=138.97763486934423,
+[1mdensity[0;0m=4.6776427564172245,
+[1mdensity_atomic[0;0m=8.686102179334014,
+[1msymmetry[0;0m=SymmetryData(crystal_system=<CrystalSystem.mono: 'Monoclinic'>, symbol='C2/m', number=12, point_group='2/m', symprec=0.1, version='2.0.2'),
+[1mproperty_name[0;0m='summary',
+[1mmaterial_id[0;0m=MPID(mp-1097885),
+[1mdeprecated[0;0m=False,
+[1mdeprecation_reasons[0;0m=None,
+[1mlast_updated[0;0m=datetime.datetime(2023, 11, 22, 19, 44, 5, 61000),
+[1morigins[0;0m=[PropertyOrigin(name='structure', task_id=MPID(mp-1774421), last_updated=datetime.datetime(2020, 11, 10, 1, 26, 55, 766000)), PropertyOrigin(name='energy', task_id=MPID(mp-1774421), last_updated=datetime.datetime(2023, 8, 3, 19, 2, 37, 987000)), PropertyOrigin(name='electronic_structure', task_id=MPID(mp-1774421), last_updated=datetime.datetime(2020, 11, 10, 1, 26, 55, 766000)), PropertyOrigin(name='magnetism', task_id=MPID(mp-1774421), last_updated=datetime.datetime(2020, 11, 10, 1, 26, 55, 766000))],
+[1mwarnings[0;0m=[],
+[1mstructure[0;0m=Structure Summary
+Lattice
+    abc : 5.813941608566515 5.8475354058902465 5.824804185342285
+ angles : 120.45493022926074 91.03751537168966 59.370261902180275
+ volume : 138.97763486934423
+      A : -0.052646 3.351453 -4.750464
+      B : -2.892984 5.08168 -0.029022
+      C : 5.824229 -0.081556 0.006998
+    pbc : True True True
+PeriodicSite: Li (5.798, 1.594, -2.368) [0.5, 1e-06, 1.0]
+PeriodicSite: Li (1.439, 4.176, -2.386) [0.5, 0.5, 0.5]
+PeriodicSite: Li (2.931, 5.0, -0.02212) [2e-05, 1.0, 1.0]
+PeriodicSite: Li (4.351, 4.135, -2.383) [0.5, 0.5, 1.0]
+PeriodicSite: Co (4.378, 2.459, -0.007565) [1.1e-05, 0.5, 1.0]
+PeriodicSite: Co (1.466, 2.5, -0.01106) [1e-05, 0.5, 0.5]
+PeriodicSite: Co (-0.007266, 6.717, -2.401) [0.5, 1.0, 0.5]
+PeriodicSite: Co (0.01905, 5.041, -0.02558) [1.1e-05, 1.0, 0.5]
+PeriodicSite: O (-1.358, 7.527, -3.556) [0.7429, 0.9955, 0.2681]
+PeriodicSite: O (-0.0398, 5.148, -3.57) [0.7487, 0.5235, 0.26]
+PeriodicSite: O (-0.06069, 3.345, -1.091) [0.2269, 0.5126, 0.2462]
+PeriodicSite: O (1.359, 7.466, -3.59) [0.7508, 0.9857, 0.7297]
+PeriodicSite: O (1.52, 0.8859, -1.183) [0.2493, 0.01427, 0.2702]
+PeriodicSite: O (2.939, 5.006, -3.681) [0.7731, 0.4874, 0.7537]
+PeriodicSite: O (2.918, 3.203, -1.203) [0.2513, 0.4765, 0.74]
+PeriodicSite: O (4.236, 0.8247, -1.216) [0.2571, 0.00449, 0.7319],
+[1mtask_ids[0;0m=[MPID(mp-1774421), MPID(mp-1097885)],
+[1muncorrected_energy_per_atom[0;0m=-5.68378859,
+[1menergy_per_atom[0;0m=-6.43678859,
+[1mformation_energy_per_atom[0;0m=-1.7000718320833332,
+[1menergy_above_hull[0;0m=0.043436579999999836,
+[1mis_stable[0;0m=False,
+[1mequilibrium_reaction_energy_per_atom[0;0m=None,
+[1mdecomposes_to[0;0m=[DecompositionProduct(material_id=MPID(mp-22526), formula='Li1 Co1 O2', amount=1.0)],
+[1mxas[0;0m=[XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Co, spectrum_type=<Type.EXAFS: 'EXAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Li, spectrum_type=<Type.EXAFS: 'EXAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element O, spectrum_type=<Type.EXAFS: 'EXAFS'>)],
+[1mgrain_boundaries[0;0m=None,
+[1mband_gap[0;0m=2.0128000000000004,
+[1mcbm[0;0m=4.1977,
+[1mvbm[0;0m=2.1849,
+[1mefermi[0;0m=2.18501113,
+[1mis_gap_direct[0;0m=False,
+[1mis_metal[0;0m=False,
+[1mes_source_calc_id[0;0m=None,
+[1mbandstructure[0;0m=None,
+[1mdos[0;0m=None,
+[1mdos_energy_up[0;0m=None,
+[1mdos_energy_down[0;0m=None,
+[1mis_magnetic[0;0m=False,
+[1mordering[0;0m='NM',
+[1mtotal_magnetization[0;0m=0.0045668,
+[1mtotal_magnetization_normalized_vol[0;0m=3.28599634343565e-05,
+[1mtotal_magnetization_normalized_formula_units[0;0m=0.0011417,
+[1mnum_magnetic_sites[0;0m=0,
+[1mnum_unique_magnetic_sites[0;0m=0,
+[1mtypes_of_magnetic_species[0;0m=[],
+[1mbulk_modulus[0;0m=None,
+[1mshear_modulus[0;0m=None,
+[1muniversal_anisotropy[0;0m=None,
+[1mhomogeneous_poisson[0;0m=None,
+[1me_total[0;0m=None,
+[1me_ionic[0;0m=None,
+[1me_electronic[0;0m=None,
+[1mn[0;0m=None,
+[1me_ij_max[0;0m=None,
+[1mweighted_surface_energy_EV_PER_ANG2[0;0m=None,
+[1mweighted_surface_energy[0;0m=None,
+[1mweighted_work_function[0;0m=None,
+[1msurface_anisotropy[0;0m=None,
+[1mshape_factor[0;0m=None,
+[1mhas_reconstructed[0;0m=None,
+[1mpossible_species[0;0m=['O2-', 'Co3+', 'Li+'],
+[1mhas_props[0;0m={'materials': True, 'thermo': True, 'xas': True, 'grain_boundaries': False, 'chemenv': True, 'electronic_structure': True, 'absorption': False, 'bandstructure': False, 'dos': False, 'magnetism': True, 'elasticity': False, 'dielectric': False, 'piezoelectric': False, 'surface_properties': False, 'oxi_states': True, 'provenance': True, 'charge_density': True, 'eos': False, 'phonon': False, 'insertion_electrodes': True, 'substrates': False},
+[1mtheoretical[0;0m=True,
+[1mdatabase_IDs[0;0m={},
+[1mfields_not_requested[0;0m=[]
+), [4m[1mMPDataDoc<SummaryDoc>[0;0m[0;0m(
+[1mbuilder_meta[0;0m=EmmetMeta(emmet_version='0.72.20', pymatgen_version='2023.11.12', pull_request=990, database_version='2023.11.1', build_date=datetime.datetime(2023, 11, 22, 19, 44, 8, 689000), license='BY-C'),
+[1mnsites[0;0m=4,
+[1melements[0;0m=[Element Co, Element Li, Element O],
+[1mnelements[0;0m=3,
+[1mcomposition[0;0m=Composition('Li1 Co1 O2'),
+[1mcomposition_reduced[0;0m=Composition('Li1 Co1 O2'),
+[1mformula_pretty[0;0m='LiCoO2',
+[1mformula_anonymous[0;0m='ABC2',
+[1mchemsys[0;0m='Co-Li-O',
+[1mvolume[0;0m=31.733696867729034,
+[1mdensity[0;0m=5.121430775621985,
+[1mdensity_atomic[0;0m=7.933424216932258,
+[1msymmetry[0;0m=SymmetryData(crystal_system=<CrystalSystem.trig: 'Trigonal'>, symbol='R-3m', number=166, point_group='-3m', symprec=0.1, version='2.0.2'),
+[1mproperty_name[0;0m='summary',
+[1mmaterial_id[0;0m=MPID(mp-22526),
+[1mdeprecated[0;0m=False,
+[1mdeprecation_reasons[0;0m=None,
+[1mlast_updated[0;0m=datetime.datetime(2023, 11, 22, 19, 44, 8, 689000),
+[1morigins[0;0m=[PropertyOrigin(name='structure', task_id=MPID(mp-2206412), last_updated=datetime.datetime(2022, 4, 29, 1, 11, 50, 171000)), PropertyOrigin(name='energy', task_id=MPID(mp-2206412), last_updated=datetime.datetime(2023, 8, 3, 19, 2, 38, 746000)), PropertyOrigin(name='magnetism', task_id=MPID(mp-2206412), last_updated=datetime.datetime(2022, 4, 29, 1, 11, 50, 171000))],
+[1mwarnings[0;0m=[],
+[1mstructure[0;0m=Structure Summary
+Lattice
+    abc : 4.912370892891281 4.912370892891281 4.9123704771170225
+ angles : 33.25407937825511 33.25407937825511 33.25406827000603
+ volume : 31.733696867729034
+      A : 4.70697107 -1.40562829 -0.00449954
+      B : 4.70697107 1.40562829 -0.00449954
+      C : 4.28950457 0.0 2.39406229
+    pbc : True True True
+PeriodicSite: Li (0.0, 0.0, 0.0) [-0.0, -0.0, -0.0]
+PeriodicSite: Co (6.852, 0.0, 1.193) [0.5, 0.5, 0.5]
+PeriodicSite: O (10.41, 0.0, 1.813) [0.76, 0.76, 0.76]
+PeriodicSite: O (3.289, 0.0, 0.5724) [0.24, 0.24, 0.24],
+[1mtask_ids[0;0m=[MPID(mp-2659573), MPID(mp-2659647), MPID(mp-2724050), MPID(mp-668942), MPID(mp-2705637), MPID(mp-2254889), MPID(mp-2659837), MPID(mp-2705694), MPID(mp-2723986), MPID(mp-561934), MPID(mp-2206412), MPID(mp-2739288), MPID(mp-796543), MPID(mp-835722), MPID(mp-2659800), MPID(mp-2659668), MPID(mp-1065742), MPID(mp-1065763), MPID(mp-2739330), MPID(mp-2562441), MPID(mp-818954), MPID(mp-2659569), MPID(mp-2562430), MPID(mp-1063771), MPID(mp-1065773), MPID(mp-1065454), MPID(mp-818806), MPID(mp-24850), MPID(mp-2211034), MPID(mp-22526), MPID(mp-2659610), MPID(mp-1065445), MPID(mp-1791684), MPID(mp-2705611), MPID(mp-1065451), MPID(mp-1440590), MPID(mp-2659915), MPID(mp-2659544), MPID(mp-2723894), MPID(mp-2705558), MPID(mp-1065436), MPID(mp-1065755), MPID(mp-1100475), MPID(mp-834962), MPID(mp-1063787), MPID(mp-825330), MPID(mp-2723962), MPID(mp-2659776), MPID(mp-1063798), MPID(mp-2253507), MPID(mp-1686614), MPID(mp-1774422), MPID(mp-2659902), MPID(mp-1063794), MPID(mp-601860), MPID(mp-545819), MPID(mp-2294730)],
+[1muncorrected_energy_per_atom[0;0m=-8.663256285,
+[1menergy_per_atom[0;0m=-6.48022517,
+[1mformation_energy_per_atom[0;0m=-1.743508412083333,
+[1menergy_above_hull[0;0m=0.0,
+[1mis_stable[0;0m=True,
+[1mequilibrium_reaction_energy_per_atom[0;0m=-0.09491474343749662,
+[1mdecomposes_to[0;0m=None,
+[1mxas[0;0m=[XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element O, spectrum_type=<Type.XAFS: 'XAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element O, spectrum_type=<Type.XANES: 'XANES'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Co, spectrum_type=<Type.XANES: 'XANES'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Li, spectrum_type=<Type.XAFS: 'XAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Li, spectrum_type=<Type.XANES: 'XANES'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Co, spectrum_type=<Type.XAFS: 'XAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Li, spectrum_type=<Type.EXAFS: 'EXAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Co, spectrum_type=<Type.EXAFS: 'EXAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element O, spectrum_type=<Type.EXAFS: 'EXAFS'>)],
+[1mgrain_boundaries[0;0m=None,
+[1mband_gap[0;0m=0.6623000000000001,
+[1mcbm[0;0m=4.4885,
+[1mvbm[0;0m=3.8262,
+[1mefermi[0;0m=3.95624374,
+[1mis_gap_direct[0;0m=False,
+[1mis_metal[0;0m=False,
+[1mes_source_calc_id[0;0m=None,
+[1mbandstructure[0;0m=BandstructureData(setyawan_curtarolo=BandStructureSummaryData(task_id=MPID(mp-818954), band_gap=0.6623000000000001, cbm={'band_index': {'-1': [10, 11], '1': []}, 'kpoint_index': [0, 88, 89], 'kpoint': <pymatgen.electronic_structure.bandstructure.Kpoint object at 0x7fd340eba550>, 'energy': 4.4885, 'projections': {'-1': [[0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0061, 0.0061], [0.0, 0.0, 0.0002, 0.0002], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0649, 0.0, 0.0], [0.0, 0.6904, 0.0, 0.0], [0.0, 0.1827, 0.0, 0.0]]}}, vbm={'band_index': {'1': [13], '-1': []}, 'kpoint_index': [135, 136], 'kpoint': <pymatgen.electronic_structure.bandstructure.Kpoint object at 0x7fd392aee430>, 'energy': 3.8262, 'projections': {'1': [[0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.2921, 0.2921], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.3024, 0.0, 0.0], [0.0, 0.0085, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]]}}, efermi=3.95624374, is_gap_direct=False, is_metal=False, magnetic_ordering='FM', nbands=30.0, equivalent_labels={'setyawan_curtarolo': {'latimer_munro': {'\\Gamma': 'Γ', 'B': 'i', 'F': 'd', 'L_1': 'a', 'P': 'q_{1}', 'P_1': 'q', 'P_2': 'q_{3}', 'Q': 'h_{1}', 'X': 'h', 'Z': 'g', 'B_1': 'i^{*}', 'L': 'a^{*}'}, 'hinuma': {'\\Gamma': 'GAMMA', 'B': 'H_4', 'B_1': 'H_6', 'F': 'F_2', 'L': 'L', 'L_1': 'L_4', 'P': 'M_4', 'P_1': 'M_6', 'P_2': 'M_8', 'Q': 'S_6', 'X': 'S_4', 'Z': 'T'}}, 'latimer_munro': {'setyawan_curtarolo': {'d': 'F', 'q': 'P_1', 'i': 'B', 'q_{1}': 'P', 'g': 'Z', 'Γ': '\\Gamma', 'h': 'X', 'q_{3}': 'P_2', 'a': 'L_1', 'h_{1}': 'Q', 'i_{1}': 'B^{*}', 'q_{2}': 'P^{*}'}, 'hinuma': {'d': 'F_2', 'q': 'M_6', 'i': 'H_4', 'q_{1}': 'M_4', 'g': 'T', 'Γ': 'GAMMA', 'h': 'S_4', 'q_{3}': 'M_8', 'a': 'L_4', 'h_{1}': 'S_6', 'i_{1}': 'H^{*}', 'q_{2}': 'M^{*}'}}, 'hinuma': {'setyawan_curtarolo': {'GAMMA': '\\Gamma', 'T': 'Z', 'L': 'L', 'L_4': 'L_1', 'F_2': 'F', 'S_4': 'X', 'S_6': 'Q', 'H_4': 'B', 'H_6': 'B_1', 'M_4': 'P', 'M_6': 'P_1', 'M_8': 'P_2', 'L_2': 'L^{*}', 'F': 'F^{*}', 'S_0': 'X^{*}', 'S_2': 'Q^{*}', 'H_0': 'B^{*}', 'H_2': 'B^{*}', 'M_0': 'P^{*}', 'M_2': 'P^{*}'}, 'latimer_munro': {'GAMMA': 'Γ', 'T': 'g', 'L_4': 'a', 'F_2': 'd', 'S_4': 'h', 'S_6': 'h_{1}', 'H_4': 'i', 'M_4': 'q_{1}', 'M_6': 'q', 'M_8': 'q_{3}', 'L': 'a^{*}', 'L_2': 'a^{*}', 'F': 'd^{*}', 'S_0': 'h^{*}', 'S_2': 'h^{*}', 'H_0': 'i^{*}', 'H_2': 'i^{*}', 'H_6': 'i^{*}', 'M_0': 'q^{*}', 'M_2': 'q^{*}'}}}, direct_gap=1.2757999999999998), hinuma=None, latimer_munro=None),
+[1mdos[0;0m=DosData(total={'1': DosSummaryData(task_id=MPID(mp-2253507), band_gap=2.2095, cbm=5.109, vbm=2.8995, efermi=2.87272593, spin_polarization=None)}, elemental={Element Li: {'total': {'1': DosSummaryData(task_id=MPID(mp-2253507), band_gap=2.2452, cbm=5.109, vbm=2.8638, efermi=2.87272593, spin_polarization=None)}, 's': {'1': DosSummaryData(task_id=MPID(mp-2253507), band_gap=2.2452, cbm=5.109, vbm=2.8638, efermi=2.87272593, spin_polarization=None)}, 'p': {'1': DosSummaryData(task_id=MPID(mp-2253507), band_gap=2.2452, cbm=5.109, vbm=2.8638, efermi=2.87272593, spin_polarization=None)}, 'd': {'1': DosSummaryData(task_id=MPID(mp-2253507), band_gap=71.2755, cbm=27.2044, vbm=-44.0711, efermi=2.87272593, spin_polarization=None)}}, Element Co: {'total': {'1': DosSummaryData(task_id=MPID(mp-2253507), band_gap=2.2095, cbm=5.109, vbm=2.8995, efermi=2.87272593, spin_polarization=None)}, 's': {'1': DosSummaryData(task_id=MPID(mp-2253507), band_gap=2.2452, cbm=5.109, vbm=2.8638, efermi=2.87272593, spin_polarization=None)}, 'p': {'1': DosSummaryData(task_id=MPID(mp-2253507), band_gap=2.2095, cbm=5.109, vbm=2.8995, efermi=2.87272593, spin_polarization=None)}, 'd': {'1': DosSummaryData(task_id=MPID(mp-2253507), band_gap=2.2095, cbm=5.109, vbm=2.8995, efermi=2.87272593, spin_polarization=None)}}, Element O: {'total': {'1': DosSummaryData(task_id=MPID(mp-2253507), band_gap=2.2095, cbm=5.109, vbm=2.8995, efermi=2.87272593, spin_polarization=None)}, 's': {'1': DosSummaryData(task_id=MPID(mp-2253507), band_gap=2.2452, cbm=5.109, vbm=2.8638, efermi=2.87272593, spin_polarization=None)}, 'p': {'1': DosSummaryData(task_id=MPID(mp-2253507), band_gap=2.2095, cbm=5.109, vbm=2.8995, efermi=2.87272593, spin_polarization=None)}, 'd': {'1': DosSummaryData(task_id=MPID(mp-2253507), band_gap=71.2755, cbm=27.2044, vbm=-44.0711, efermi=2.87272593, spin_polarization=None)}}}, orbital={'s': {'1': DosSummaryData(task_id=MPID(mp-2253507), band_gap=2.2452, cbm=5.109, vbm=2.8638, efermi=2.87272593, spin_polarization=None)}, 'p': {'1': DosSummaryData(task_id=MPID(mp-2253507), band_gap=2.2095, cbm=5.109, vbm=2.8995, efermi=2.87272593, spin_polarization=None)}, 'd': {'1': DosSummaryData(task_id=MPID(mp-2253507), band_gap=2.2095, cbm=5.109, vbm=2.8995, efermi=2.87272593, spin_polarization=None)}}, magnetic_ordering='NM'),
+[1mdos_energy_up[0;0m=None,
+[1mdos_energy_down[0;0m=None,
+[1mis_magnetic[0;0m=False,
+[1mordering[0;0m='NM',
+[1mtotal_magnetization[0;0m=0.0,
+[1mtotal_magnetization_normalized_vol[0;0m=0.0,
+[1mtotal_magnetization_normalized_formula_units[0;0m=0.0,
+[1mnum_magnetic_sites[0;0m=0,
+[1mnum_unique_magnetic_sites[0;0m=0,
+[1mtypes_of_magnetic_species[0;0m=[],
+[1mbulk_modulus[0;0m=None,
+[1mshear_modulus[0;0m=None,
+[1muniversal_anisotropy[0;0m=None,
+[1mhomogeneous_poisson[0;0m=None,
+[1me_total[0;0m=None,
+[1me_ionic[0;0m=None,
+[1me_electronic[0;0m=None,
+[1mn[0;0m=None,
+[1me_ij_max[0;0m=None,
+[1mweighted_surface_energy_EV_PER_ANG2[0;0m=None,
+[1mweighted_surface_energy[0;0m=None,
+[1mweighted_work_function[0;0m=None,
+[1msurface_anisotropy[0;0m=None,
+[1mshape_factor[0;0m=None,
+[1mhas_reconstructed[0;0m=None,
+[1mpossible_species[0;0m=['O2-', 'Co3+', 'Li+'],
+[1mhas_props[0;0m={'materials': True, 'thermo': True, 'xas': False, 'grain_boundaries': False, 'chemenv': True, 'electronic_structure': True, 'absorption': False, 'bandstructure': True, 'dos': True, 'magnetism': True, 'elasticity': False, 'dielectric': False, 'piezoelectric': False, 'surface_properties': False, 'oxi_states': True, 'provenance': True, 'charge_density': True, 'eos': False, 'phonon': False, 'insertion_electrodes': True, 'substrates': True},
+[1mtheoretical[0;0m=False,
+[1mdatabase_IDs[0;0m={'icsd': ['icsd-182346', 'icsd-193442', 'icsd-248635', 'icsd-164801', 'icsd-164802', 'icsd-160714', 'icsd-155284', 'icsd-182442', 'icsd-172909', 'icsd-51182', 'icsd-98270', 'icsd-164320', 'icsd-180989', 'icsd-182444', 'icsd-248640', 'icsd-29225', 'icsd-51767', 'icsd-246411', 'icsd-246413', 'icsd-246412', 'icsd-51382', 'icsd-246414', 'icsd-156395', 'icsd-51381', 'icsd-182443']},
+[1mfields_not_requested[0;0m=[]
+), [4m[1mMPDataDoc<SummaryDoc>[0;0m[0;0m(
+[1mbuilder_meta[0;0m=EmmetMeta(emmet_version='0.72.20', pymatgen_version='2023.11.12', pull_request=990, database_version='2023.11.1', build_date=datetime.datetime(2023, 11, 22, 19, 45, 0, 149000), license='BY-C'),
+[1mnsites[0;0m=16,
+[1melements[0;0m=[Element Co, Element Li, Element O],
+[1mnelements[0;0m=3,
+[1mcomposition[0;0m=Composition('Li4 Co4 O8'),
+[1mcomposition_reduced[0;0m=Composition('Li1 Co1 O2'),
+[1mformula_pretty[0;0m='LiCoO2',
+[1mformula_anonymous[0;0m='ABC2',
+[1mchemsys[0;0m='Co-Li-O',
+[1mvolume[0;0m=126.28750787889233,
+[1mdensity[0;0m=5.14768038398548,
+[1mdensity_atomic[0;0m=7.8929692424307705,
+[1msymmetry[0;0m=SymmetryData(crystal_system=<CrystalSystem.cubic: 'Cubic'>, symbol='Fd-3m', number=227, point_group='m-3m', symprec=0.1, version='2.0.2'),
+[1mproperty_name[0;0m='summary',
+[1mmaterial_id[0;0m=MPID(mp-849273),
+[1mdeprecated[0;0m=False,
+[1mdeprecation_reasons[0;0m=None,
+[1mlast_updated[0;0m=datetime.datetime(2023, 11, 22, 19, 45, 0, 149000),
+[1morigins[0;0m=[PropertyOrigin(name='structure', task_id=MPID(mp-2015187), last_updated=datetime.datetime(2021, 3, 14, 7, 2, 44, 621000)), PropertyOrigin(name='energy', task_id=MPID(mp-2015187), last_updated=datetime.datetime(2023, 8, 3, 19, 2, 39, 176000)), PropertyOrigin(name='setyawan_curtarolo', task_id=MPID(mp-905249), last_updated=datetime.datetime(2021, 2, 16, 23, 14, 6, 800000)), PropertyOrigin(name='dos', task_id=MPID(mp-904169), last_updated=datetime.datetime(2015, 1, 19, 18, 38, 9)), PropertyOrigin(name='electronic_structure', task_id=MPID(mp-894498), last_updated=datetime.datetime(2014, 12, 10, 5, 31, 6)), PropertyOrigin(name='magnetism', task_id=MPID(mp-2015187), last_updated=datetime.datetime(2021, 3, 14, 7, 2, 44, 621000))],
+[1mwarnings[0;0m=[],
+[1mstructure[0;0m=Structure Summary
+Lattice
+    abc : 5.63403107826833 5.629033561785814 5.634003633522694
+ angles : 119.99971129301545 89.94817421597674 60.00002342871639
+ volume : 126.28750787889233
+      A : 0.00017559 3.23475429 -4.61288097
+      B : -2.77292221 4.89866461 -0.00250913
+      C : 5.63365915 -0.04802541 -0.03968733
+    pbc : True True True
+PeriodicSite: Li (8.782e-05, 1.618, -2.306) [0.5, 4.042e-05, 1.99e-05]
+PeriodicSite: Li (1.43, 4.043, -2.328) [0.5001, 0.5, 0.5]
+PeriodicSite: Li (2.86, 4.85, -0.04246) [5.732e-05, 0.9999, 0.9999]
+PeriodicSite: Li (-1.386, 4.067, -2.308) [0.5, 0.5, 8.8e-07]
+PeriodicSite: Co (-1.387, 2.449, -0.001296) [9.06e-06, 0.5, -1.455e-05]
+PeriodicSite: Co (1.43, 2.425, -0.02114) [9.19e-06, 0.5, 0.5]
+PeriodicSite: Co (2.817, 1.593, -2.326) [0.5, 1.47e-06, 0.5]
+PeriodicSite: Co (2.817, -0.02396, -0.01987) [5.48e-06, 6.84e-06, 0.5]
+PeriodicSite: O (-1.256, 7.251, -3.517) [0.7596, 0.9811, 0.26]
+PeriodicSite: O (0.02397, 4.988, -3.517) [0.76, 0.5189, 0.2596]
+PeriodicSite: O (0.02169, 3.245, -1.032) [0.2211, 0.5189, 0.2592]
+PeriodicSite: O (1.342, 7.228, -3.533) [0.7592, 0.9811, 0.7211]
+PeriodicSite: O (1.519, 0.8578, -1.122) [0.2408, 0.01887, 0.2789]
+PeriodicSite: O (2.839, 4.841, -3.623) [0.7789, 0.4811, 0.7408]
+PeriodicSite: O (2.837, 3.098, -1.138) [0.24, 0.4811, 0.7404]
+PeriodicSite: O (4.117, 0.8345, -1.138) [0.2404, 0.01887, 0.74],
+[1mtask_ids[0;0m=[MPID(mp-1442744), MPID(mp-1096831), MPID(mp-1443860), MPID(mp-1788768), MPID(mp-905249), MPID(mp-904169), MPID(mp-1774434), MPID(mp-2015187), MPID(mp-849273), MPID(mp-894498), MPID(mp-2016100), MPID(mp-1927455)],
+[1muncorrected_energy_per_atom[0;0m=-8.66266021875,
+[1menergy_per_atom[0;0m=-6.479629103750001,
+[1mformation_energy_per_atom[0;0m=-1.742912345833334,
+[1menergy_above_hull[0;0m=0.0005960662499990832,
+[1mis_stable[0;0m=False,
+[1mequilibrium_reaction_energy_per_atom[0;0m=None,
+[1mdecomposes_to[0;0m=[DecompositionProduct(material_id=MPID(mp-22526), formula='Li1 Co1 O2', amount=1.0)],
+[1mxas[0;0m=[XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Co, spectrum_type=<Type.EXAFS: 'EXAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Li, spectrum_type=<Type.EXAFS: 'EXAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element O, spectrum_type=<Type.EXAFS: 'EXAFS'>)],
+[1mgrain_boundaries[0;0m=None,
+[1mband_gap[0;0m=0.0,
+[1mcbm[0;0m=None,
+[1mvbm[0;0m=None,
+[1mefermi[0;0m=3.36172862,
+[1mis_gap_direct[0;0m=False,
+[1mis_metal[0;0m=True,
+[1mes_source_calc_id[0;0m=None,
+[1mbandstructure[0;0m=None,
+[1mdos[0;0m=None,
+[1mdos_energy_up[0;0m=None,
+[1mdos_energy_down[0;0m=None,
+[1mis_magnetic[0;0m=False,
+[1mordering[0;0m='NM',
+[1mtotal_magnetization[0;0m=9e-07,
+[1mtotal_magnetization_normalized_vol[0;0m=7.126595615958194e-09,
+[1mtotal_magnetization_normalized_formula_units[0;0m=2.25e-07,
+[1mnum_magnetic_sites[0;0m=0,
+[1mnum_unique_magnetic_sites[0;0m=0,
+[1mtypes_of_magnetic_species[0;0m=[],
+[1mbulk_modulus[0;0m=None,
+[1mshear_modulus[0;0m=None,
+[1muniversal_anisotropy[0;0m=None,
+[1mhomogeneous_poisson[0;0m=None,
+[1me_total[0;0m=None,
+[1me_ionic[0;0m=None,
+[1me_electronic[0;0m=None,
+[1mn[0;0m=None,
+[1me_ij_max[0;0m=None,
+[1mweighted_surface_energy_EV_PER_ANG2[0;0m=None,
+[1mweighted_surface_energy[0;0m=None,
+[1mweighted_work_function[0;0m=None,
+[1msurface_anisotropy[0;0m=None,
+[1mshape_factor[0;0m=None,
+[1mhas_reconstructed[0;0m=None,
+[1mpossible_species[0;0m=['Co3+', 'O2-', 'Li+'],
+[1mhas_props[0;0m={'materials': True, 'thermo': True, 'xas': True, 'grain_boundaries': False, 'chemenv': True, 'electronic_structure': True, 'absorption': False, 'bandstructure': False, 'dos': False, 'magnetism': True, 'elasticity': False, 'dielectric': False, 'piezoelectric': False, 'surface_properties': False, 'oxi_states': True, 'provenance': True, 'charge_density': True, 'eos': False, 'phonon': False, 'insertion_electrodes': True, 'substrates': False},
+[1mtheoretical[0;0m=True,
+[1mdatabase_IDs[0;0m={},
+[1mfields_not_requested[0;0m=[]
+), [4m[1mMPDataDoc<SummaryDoc>[0;0m[0;0m(
+[1mbuilder_meta[0;0m=EmmetMeta(emmet_version='0.72.20', pymatgen_version='2023.11.12', pull_request=990, database_version='2023.11.1', build_date=datetime.datetime(2023, 11, 22, 19, 45, 12, 668000), license='BY-C'),
+[1mnsites[0;0m=16,
+[1melements[0;0m=[Element Co, Element Li, Element O],
+[1mnelements[0;0m=3,
+[1mcomposition[0;0m=Composition('Li4 Co4 O8'),
+[1mcomposition_reduced[0;0m=Composition('Li1 Co1 O2'),
+[1mformula_pretty[0;0m='LiCoO2',
+[1mformula_anonymous[0;0m='ABC2',
+[1mchemsys[0;0m='Co-Li-O',
+[1mvolume[0;0m=138.98697781176432,
+[1mdensity[0;0m=4.677328317268873,
+[1mdensity_atomic[0;0m=8.68668611323527,
+[1msymmetry[0;0m=SymmetryData(crystal_system=<CrystalSystem.trig: 'Trigonal'>, symbol='R-3m', number=166, point_group='-3m', symprec=0.1, version='2.0.2'),
+[1mproperty_name[0;0m='summary',
+[1mmaterial_id[0;0m=MPID(mp-1404711),
+[1mdeprecated[0;0m=False,
+[1mdeprecation_reasons[0;0m=None,
+[1mlast_updated[0;0m=datetime.datetime(2023, 11, 22, 19, 45, 12, 668000),
+[1morigins[0;0m=[PropertyOrigin(name='structure', task_id=MPID(mp-1404711), last_updated=datetime.datetime(2020, 5, 2, 21, 27, 46, 636000)), PropertyOrigin(name='energy', task_id=MPID(mp-1404711), last_updated=datetime.datetime(2023, 8, 3, 19, 2, 35, 803000)), PropertyOrigin(name='electronic_structure', task_id=MPID(mp-1404711), last_updated=datetime.datetime(2020, 5, 2, 21, 27, 46, 636000)), PropertyOrigin(name='magnetism', task_id=MPID(mp-1404711), last_updated=datetime.datetime(2020, 5, 2, 21, 27, 46, 636000))],
+[1mwarnings[0;0m=[],
+[1mstructure[0;0m=Structure Summary
+Lattice
+    abc : 5.794616278499293 5.794616278499293 5.8292263157317885
+ angles : 59.98219226483891 59.98219226483891 60.60513105783248
+ volume : 138.98697781176432
+      A : 2.923768 5.002915 0.0
+      B : -2.923768 5.002915 0.0
+      C : 0.0 3.377662 4.750924
+    pbc : True True True
+PeriodicSite: Li (1.462, 4.19, 2.375) [0.5, 0.0, 0.5]
+PeriodicSite: Li (0.0, 0.0, 0.0) [0.0, 0.0, 0.0]
+PeriodicSite: Li (0.0, 1.689, 2.375) [0.0, 0.0, 0.5]
+PeriodicSite: Li (-1.462, 4.19, 2.375) [0.0, 0.5, 0.5]
+PeriodicSite: Co (0.0, 6.692, 2.375) [0.5, 0.5, 0.5]
+PeriodicSite: Co (1.462, 2.501, 0.0) [0.5, 0.0, 0.0]
+PeriodicSite: Co (0.0, 5.003, 0.0) [0.5, 0.5, 0.0]
+PeriodicSite: Co (-1.462, 2.501, 0.0) [0.0, 0.5, 0.0]
+PeriodicSite: O (-1.362, 7.542, 3.649) [0.2616, 0.7274, 0.7681]
+PeriodicSite: O (1.362, 7.542, 3.649) [0.7274, 0.2616, 0.7681]
+PeriodicSite: O (0.0, 5.156, 3.545) [0.2634, 0.2634, 0.7463]
+PeriodicSite: O (0.0, 3.375, 1.091) [0.2598, 0.2598, 0.2297]
+PeriodicSite: O (0.0, 10.01, 3.659) [0.7402, 0.7402, 0.7703]
+PeriodicSite: O (0.0, 8.227, 1.206) [0.7366, 0.7366, 0.2537]
+PeriodicSite: O (-1.362, 5.841, 1.102) [0.2726, 0.7384, 0.2319]
+PeriodicSite: O (1.362, 5.841, 1.102) [0.7384, 0.2726, 0.2319],
+[1mtask_ids[0;0m=[MPID(mp-1404711)],
+[1muncorrected_energy_per_atom[0;0m=-5.68163482875,
+[1menergy_per_atom[0;0m=-6.43463482875,
+[1mformation_energy_per_atom[0;0m=-1.6979180708333335,
+[1menergy_above_hull[0;0m=0.04559034124999961,
+[1mis_stable[0;0m=False,
+[1mequilibrium_reaction_energy_per_atom[0;0m=None,
+[1mdecomposes_to[0;0m=[DecompositionProduct(material_id=MPID(mp-22526), formula='Li1 Co1 O2', amount=1.0)],
+[1mxas[0;0m=None,
+[1mgrain_boundaries[0;0m=None,
+[1mband_gap[0;0m=1.9959999999999996,
+[1mcbm[0;0m=4.2059,
+[1mvbm[0;0m=2.2099,
+[1mefermi[0;0m=2.28552271,
+[1mis_gap_direct[0;0m=False,
+[1mis_metal[0;0m=False,
+[1mes_source_calc_id[0;0m=None,
+[1mbandstructure[0;0m=None,
+[1mdos[0;0m=None,
+[1mdos_energy_up[0;0m=None,
+[1mdos_energy_down[0;0m=None,
+[1mis_magnetic[0;0m=False,
+[1mordering[0;0m='NM',
+[1mtotal_magnetization[0;0m=0.0148981,
+[1mtotal_magnetization_normalized_vol[0;0m=0.00010719061767194549,
+[1mtotal_magnetization_normalized_formula_units[0;0m=0.003724525,
+[1mnum_magnetic_sites[0;0m=0,
+[1mnum_unique_magnetic_sites[0;0m=0,
+[1mtypes_of_magnetic_species[0;0m=[],
+[1mbulk_modulus[0;0m=None,
+[1mshear_modulus[0;0m=None,
+[1muniversal_anisotropy[0;0m=None,
+[1mhomogeneous_poisson[0;0m=None,
+[1me_total[0;0m=None,
+[1me_ionic[0;0m=None,
+[1me_electronic[0;0m=None,
+[1mn[0;0m=None,
+[1me_ij_max[0;0m=None,
+[1mweighted_surface_energy_EV_PER_ANG2[0;0m=None,
+[1mweighted_surface_energy[0;0m=None,
+[1mweighted_work_function[0;0m=None,
+[1msurface_anisotropy[0;0m=None,
+[1mshape_factor[0;0m=None,
+[1mhas_reconstructed[0;0m=None,
+[1mpossible_species[0;0m=['Li+', 'O2-', 'Co3+'],
+[1mhas_props[0;0m={'materials': True, 'thermo': True, 'xas': False, 'grain_boundaries': False, 'chemenv': True, 'electronic_structure': True, 'absorption': False, 'bandstructure': False, 'dos': False, 'magnetism': True, 'elasticity': False, 'dielectric': False, 'piezoelectric': False, 'surface_properties': False, 'oxi_states': True, 'provenance': True, 'charge_density': False, 'eos': False, 'phonon': False, 'insertion_electrodes': True, 'substrates': False},
+[1mtheoretical[0;0m=True,
+[1mdatabase_IDs[0;0m={},
+[1mfields_not_requested[0;0m=[]
+), [4m[1mMPDataDoc<SummaryDoc>[0;0m[0;0m(
+[1mbuilder_meta[0;0m=EmmetMeta(emmet_version='0.72.20', pymatgen_version='2023.11.12', pull_request=990, database_version='2023.11.1', build_date=datetime.datetime(2023, 11, 22, 19, 45, 38, 301000), license='BY-C'),
+[1mnsites[0;0m=4,
+[1melements[0;0m=[Element Co, Element Li, Element O],
+[1mnelements[0;0m=3,
+[1mcomposition[0;0m=Composition('Li1 Co1 O2'),
+[1mcomposition_reduced[0;0m=Composition('Li1 Co1 O2'),
+[1mformula_pretty[0;0m='LiCoO2',
+[1mformula_anonymous[0;0m='ABC2',
+[1mchemsys[0;0m='Co-Li-O',
+[1mvolume[0;0m=34.567266737206864,
+[1mdensity[0;0m=4.7016136103035935,
+[1mdensity_atomic[0;0m=8.641816684301716,
+[1msymmetry[0;0m=SymmetryData(crystal_system=<CrystalSystem.tet: 'Tetragonal'>, symbol='P4/mmm', number=123, point_group='4/mmm', symprec=0.1, version='2.0.2'),
+[1mproperty_name[0;0m='summary',
+[1mmaterial_id[0;0m=MPID(mp-1222334),
+[1mdeprecated[0;0m=False,
+[1mdeprecation_reasons[0;0m=None,
+[1mlast_updated[0;0m=datetime.datetime(2023, 11, 22, 19, 45, 38, 302000),
+[1morigins[0;0m=[PropertyOrigin(name='structure', task_id=MPID(mp-1791842), last_updated=datetime.datetime(2020, 11, 12, 2, 25, 10, 512000)), PropertyOrigin(name='energy', task_id=MPID(mp-1791842), last_updated=datetime.datetime(2023, 8, 3, 19, 2, 32, 681000)), PropertyOrigin(name='electronic_structure', task_id=MPID(mp-1791842), last_updated=datetime.datetime(2020, 11, 12, 2, 25, 10, 512000)), PropertyOrigin(name='magnetism', task_id=MPID(mp-1791842), last_updated=datetime.datetime(2020, 11, 12, 2, 25, 10, 512000))],
+[1mwarnings[0;0m=[],
+[1mstructure[0;0m=Structure Summary
+Lattice
+    abc : 2.993528 2.993528 3.857433
+ angles : 90.0 90.0 90.0
+ volume : 34.567266737206864
+      A : 2.993528 0.0 0.0
+      B : 0.0 2.993528 0.0
+      C : 0.0 0.0 3.857433
+    pbc : True True True
+PeriodicSite: Li (0.0, 0.0, 0.0) [0.0, 0.0, 0.0]
+PeriodicSite: Co (1.497, 1.497, 1.929) [0.5, 0.5, 0.5]
+PeriodicSite: O (0.0, 0.0, 1.929) [0.0, 0.0, 0.5]
+PeriodicSite: O (1.497, 1.497, 0.0) [0.5, 0.5, 0.0],
+[1mtask_ids[0;0m=[MPID(mp-1423799), MPID(mp-1772941), MPID(mp-1774429), MPID(mp-1791842), MPID(mp-1222334)],
+[1muncorrected_energy_per_atom[0;0m=-5.515803435,
+[1menergy_per_atom[0;0m=-6.268803435,
+[1mformation_energy_per_atom[0;0m=-1.532086677083333,
+[1menergy_above_hull[0;0m=0.21142173500000006,
+[1mis_stable[0;0m=False,
+[1mequilibrium_reaction_energy_per_atom[0;0m=None,
+[1mdecomposes_to[0;0m=[DecompositionProduct(material_id=MPID(mp-22526), formula='Li1 Co1 O2', amount=1.0)],
+[1mxas[0;0m=None,
+[1mgrain_boundaries[0;0m=None,
+[1mband_gap[0;0m=0.0,
+[1mcbm[0;0m=None,
+[1mvbm[0;0m=None,
+[1mefermi[0;0m=3.02220337,
+[1mis_gap_direct[0;0m=False,
+[1mis_metal[0;0m=True,
+[1mes_source_calc_id[0;0m=None,
+[1mbandstructure[0;0m=None,
+[1mdos[0;0m=None,
+[1mdos_energy_up[0;0m=None,
+[1mdos_energy_down[0;0m=None,
+[1mis_magnetic[0;0m=True,
+[1mordering[0;0m='FM',
+[1mtotal_magnetization[0;0m=3.7700482,
+[1mtotal_magnetization_normalized_vol[0;0m=0.10906411052575547,
+[1mtotal_magnetization_normalized_formula_units[0;0m=3.7700482,
+[1mnum_magnetic_sites[0;0m=3,
+[1mnum_unique_magnetic_sites[0;0m=3,
+[1mtypes_of_magnetic_species[0;0m=[Element Co, Element O],
+[1mbulk_modulus[0;0m=None,
+[1mshear_modulus[0;0m=None,
+[1muniversal_anisotropy[0;0m=None,
+[1mhomogeneous_poisson[0;0m=None,
+[1me_total[0;0m=None,
+[1me_ionic[0;0m=None,
+[1me_electronic[0;0m=None,
+[1mn[0;0m=None,
+[1me_ij_max[0;0m=None,
+[1mweighted_surface_energy_EV_PER_ANG2[0;0m=None,
+[1mweighted_surface_energy[0;0m=None,
+[1mweighted_work_function[0;0m=None,
+[1msurface_anisotropy[0;0m=None,
+[1mshape_factor[0;0m=None,
+[1mhas_reconstructed[0;0m=None,
+[1mpossible_species[0;0m=['Co3+', 'O2-', 'Li+'],
+[1mhas_props[0;0m={'materials': True, 'thermo': True, 'xas': False, 'grain_boundaries': False, 'chemenv': True, 'electronic_structure': True, 'absorption': False, 'bandstructure': False, 'dos': False, 'magnetism': True, 'elasticity': False, 'dielectric': False, 'piezoelectric': False, 'surface_properties': False, 'oxi_states': True, 'provenance': True, 'charge_density': True, 'eos': False, 'phonon': False, 'insertion_electrodes': False, 'substrates': False},
+[1mtheoretical[0;0m=True,
+[1mdatabase_IDs[0;0m={},
+[1mfields_not_requested[0;0m=[]
+), [4m[1mMPDataDoc<SummaryDoc>[0;0m[0;0m(
+[1mbuilder_meta[0;0m=EmmetMeta(emmet_version='0.72.20', pymatgen_version='2023.11.12', pull_request=990, database_version='2023.11.1', build_date=datetime.datetime(2023, 11, 22, 19, 45, 42, 139000), license='BY-C'),
+[1mnsites[0;0m=20,
+[1melements[0;0m=[Element Co, Element Li, Element O],
+[1mnelements[0;0m=3,
+[1mcomposition[0;0m=Composition('Li5 Co5 O10'),
+[1mcomposition_reduced[0;0m=Composition('Li1 Co1 O2'),
+[1mformula_pretty[0;0m='LiCoO2',
+[1mformula_anonymous[0;0m='ABC2',
+[1mchemsys[0;0m='Co-Li-O',
+[1mvolume[0;0m=167.51177318441944,
+[1mdensity[0;0m=4.851059978444634,
+[1mdensity_atomic[0;0m=8.375588659220972,
+[1msymmetry[0;0m=SymmetryData(crystal_system=<CrystalSystem.tri: 'Triclinic'>, symbol='P-1', number=2, point_group='-1', symprec=0.1, version='2.0.2'),
+[1mproperty_name[0;0m='summary',
+[1mmaterial_id[0;0m=MPID(mp-1340071),
+[1mdeprecated[0;0m=False,
+[1mdeprecation_reasons[0;0m=None,
+[1mlast_updated[0;0m=datetime.datetime(2023, 11, 22, 19, 45, 42, 139000),
+[1morigins[0;0m=[PropertyOrigin(name='structure', task_id=MPID(mp-1340071), last_updated=datetime.datetime(2020, 4, 30, 2, 57, 55, 408000)), PropertyOrigin(name='energy', task_id=MPID(mp-1340071), last_updated=datetime.datetime(2023, 8, 3, 19, 2, 32, 836000)), PropertyOrigin(name='electronic_structure', task_id=MPID(mp-1340071), last_updated=datetime.datetime(2020, 4, 30, 2, 57, 55, 408000)), PropertyOrigin(name='magnetism', task_id=MPID(mp-1340071), last_updated=datetime.datetime(2020, 4, 30, 2, 57, 55, 408000))],
+[1mwarnings[0;0m=[],
+[1mstructure[0;0m=Structure Summary
+Lattice
+    abc : 4.953374 5.003462748382365 7.573100314789445
+ angles : 108.77149388817682 102.8505206856359 99.44979370555656
+ volume : 167.51177318441944
+      A : 4.953374 0.0 0.0
+      B : -0.821485 4.935565 0.0
+      C : -1.68432 -2.75085 6.851842
+    pbc : True True True
+PeriodicSite: Li (2.845, 1.326, 2.841) [0.7983, 0.4999, 0.4147]
+PeriodicSite: Li (1.304, 0.3738, 5.338) [0.6128, 0.51, 0.7791]
+PeriodicSite: Li (-0.8422, -1.375, 3.426) [0.0, 0.0, 0.5]
+PeriodicSite: Li (1.143, 1.811, 1.513) [0.3872, 0.49, 0.2209]
+PeriodicSite: Li (-0.3977, 0.8582, 4.01) [0.2017, 0.5001, 0.5853]
+PeriodicSite: Co (0.8481, -1.891, 4.759) [0.408, 0.003986, 0.6945]
+PeriodicSite: Co (-0.4107, 2.468, 0.0) [0.0, 0.5, 0.0]
+PeriodicSite: Co (1.621, 2.453, 6.159) [0.7985, 0.998, 0.8989]
+PeriodicSite: Co (0.8264, -0.2684, 0.6927) [0.2015, 0.001957, 0.1011]
+PeriodicSite: Co (1.6, 4.076, 2.093) [0.592, 0.996, 0.3055]
+PeriodicSite: O (-0.7354, -1.256, 5.876) [0.1802, 0.2235, 0.8576]
+PeriodicSite: O (-0.2605, 1.229, 6.5) [0.399, 0.7778, 0.9486]
+PeriodicSite: O (1.322, 2.315, 3.758) [0.5819, 0.7746, 0.5484]
+PeriodicSite: O (4.351, 0.5595, 1.58) [0.9969, 0.2419, 0.2306]
+PeriodicSite: O (2.555, -0.7269, 4.566) [0.7796, 0.2241, 0.6664]
+PeriodicSite: O (-0.1076, 2.912, 2.286) [0.2204, 0.7759, 0.3336]
+PeriodicSite: O (-1.903, 1.625, 5.272) [0.003108, 0.7581, 0.7694]
+PeriodicSite: O (1.125, -0.1299, 3.094) [0.4181, 0.2254, 0.4516]
+PeriodicSite: O (2.708, 0.9553, 0.3522) [0.601, 0.2222, 0.05141]
+PeriodicSite: O (3.183, 3.441, 0.9757) [0.8198, 0.7765, 0.1424],
+[1mtask_ids[0;0m=[MPID(mp-1340071)],
+[1muncorrected_energy_per_atom[0;0m=-4.2133897760000005,
+[1menergy_per_atom[0;0m=-4.966389776000001,
+[1mformation_energy_per_atom[0;0m=-0.2296730180833336,
+[1menergy_above_hull[0;0m=1.5138353939999991,
+[1mis_stable[0;0m=False,
+[1mequilibrium_reaction_energy_per_atom[0;0m=None,
+[1mdecomposes_to[0;0m=[DecompositionProduct(material_id=MPID(mp-22526), formula='Li1 Co1 O2', amount=1.0)],
+[1mxas[0;0m=None,
+[1mgrain_boundaries[0;0m=None,
+[1mband_gap[0;0m=0.0,
+[1mcbm[0;0m=None,
+[1mvbm[0;0m=None,
+[1mefermi[0;0m=4.11475278,
+[1mis_gap_direct[0;0m=False,
+[1mis_metal[0;0m=True,
+[1mes_source_calc_id[0;0m=None,
+[1mbandstructure[0;0m=None,
+[1mdos[0;0m=None,
+[1mdos_energy_up[0;0m=None,
+[1mdos_energy_down[0;0m=None,
+[1mis_magnetic[0;0m=True,
+[1mordering[0;0m='FiM',
+[1mtotal_magnetization[0;0m=1.9490568,
+[1mtotal_magnetization_normalized_vol[0;0m=0.011635342178929815,
+[1mtotal_magnetization_normalized_formula_units[0;0m=0.38981136,
+[1mnum_magnetic_sites[0;0m=7,
+[1mnum_unique_magnetic_sites[0;0m=8,
+[1mtypes_of_magnetic_species[0;0m=[Element Co, Element O],
+[1mbulk_modulus[0;0m=None,
+[1mshear_modulus[0;0m=None,
+[1muniversal_anisotropy[0;0m=None,
+[1mhomogeneous_poisson[0;0m=None,
+[1me_total[0;0m=None,
+[1me_ionic[0;0m=None,
+[1me_electronic[0;0m=None,
+[1mn[0;0m=None,
+[1me_ij_max[0;0m=None,
+[1mweighted_surface_energy_EV_PER_ANG2[0;0m=None,
+[1mweighted_surface_energy[0;0m=None,
+[1mweighted_work_function[0;0m=None,
+[1msurface_anisotropy[0;0m=None,
+[1mshape_factor[0;0m=None,
+[1mhas_reconstructed[0;0m=None,
+[1mpossible_species[0;0m=['Co3+', 'O2-', 'Li+'],
+[1mhas_props[0;0m={'materials': True, 'thermo': True, 'xas': False, 'grain_boundaries': False, 'chemenv': True, 'electronic_structure': True, 'absorption': False, 'bandstructure': False, 'dos': False, 'magnetism': True, 'elasticity': False, 'dielectric': False, 'piezoelectric': False, 'surface_properties': False, 'oxi_states': True, 'provenance': True, 'charge_density': False, 'eos': False, 'phonon': False, 'insertion_electrodes': False, 'substrates': False},
+[1mtheoretical[0;0m=True,
+[1mdatabase_IDs[0;0m={},
+[1mfields_not_requested[0;0m=[]
+), [4m[1mMPDataDoc<SummaryDoc>[0;0m[0;0m(
+[1mbuilder_meta[0;0m=EmmetMeta(emmet_version='0.72.20', pymatgen_version='2023.11.12', pull_request=990, database_version='2023.11.1', build_date=datetime.datetime(2023, 11, 22, 19, 47, 15, 371000), license='BY-C'),
+[1mnsites[0;0m=20,
+[1melements[0;0m=[Element Co, Element Li, Element O],
+[1mnelements[0;0m=3,
+[1mcomposition[0;0m=Composition('Li5 Co5 O10'),
+[1mcomposition_reduced[0;0m=Composition('Li1 Co1 O2'),
+[1mformula_pretty[0;0m='LiCoO2',
+[1mformula_anonymous[0;0m='ABC2',
+[1mchemsys[0;0m='Co-Li-O',
+[1mvolume[0;0m=167.51174412569938,
+[1mdensity[0;0m=4.851060819971266,
+[1mdensity_atomic[0;0m=8.375587206284969,
+[1msymmetry[0;0m=SymmetryData(crystal_system=<CrystalSystem.tri: 'Triclinic'>, symbol='P-1', number=2, point_group='-1', symprec=0.1, version='2.0.2'),
+[1mproperty_name[0;0m='summary',
+[1mmaterial_id[0;0m=MPID(mp-867664),
+[1mdeprecated[0;0m=False,
+[1mdeprecation_reasons[0;0m=None,
+[1mlast_updated[0;0m=datetime.datetime(2023, 11, 22, 19, 47, 15, 371000),
+[1morigins[0;0m=[PropertyOrigin(name='structure', task_id=MPID(mp-1774424), last_updated=datetime.datetime(2020, 11, 10, 1, 25, 3, 914000)), PropertyOrigin(name='energy', task_id=MPID(mp-1774424), last_updated=datetime.datetime(2023, 8, 3, 19, 2, 35, 274000)), PropertyOrigin(name='electronic_structure', task_id=MPID(mp-1785847), last_updated=datetime.datetime(2020, 11, 11, 9, 27, 38, 670000)), PropertyOrigin(name='magnetism', task_id=MPID(mp-1774424), last_updated=datetime.datetime(2020, 11, 10, 1, 25, 3, 914000))],
+[1mwarnings[0;0m=[],
+[1mstructure[0;0m=Structure Summary
+Lattice
+    abc : 4.953373527323879 5.003462697096581 7.573099711983528
+ angles : 108.77149796622072 102.85051380397121 99.44979338149926
+ volume : 167.51174412569938
+      A : 4.949633 0.18769 0.042602
+      B : -1.00671 4.899239 -0.136496
+      C : -1.645142 -2.634445 6.906884
+    pbc : True True True
+PeriodicSite: Li (-0.5485, 3.428, 2.749) [0.213, 0.9146, 0.4147]
+PeriodicSite: Li (0.367, -0.5627, 5.358) [0.3919, 0.2891, 0.7791]
+PeriodicSite: Li (1.149, 1.226, 3.406) [0.5, 0.5, 0.5]
+PeriodicSite: Li (1.931, 3.015, 1.454) [0.6081, 0.7109, 0.2209]
+PeriodicSite: Li (2.846, -0.9758, 4.064) [0.787, 0.0854, 0.5853]
+PeriodicSite: Co (-1.338, 1.612, 4.706) [0.1025, 0.6985, 0.6945]
+PeriodicSite: Co (-0.5034, 2.45, -0.06825) [0.0, 0.5, 0.0]
+PeriodicSite: Co (1.07, 2.157, 6.116) [0.6974, 0.897, 0.8989]
+PeriodicSite: Co (1.228, 0.2953, 0.6971) [0.3026, 0.1031, 0.1011]
+PeriodicSite: Co (3.636, 0.8408, 2.107) [0.8975, 0.3015, 0.3055]
+PeriodicSite: O (-1.305, -1.855, 5.914) [0.03782, 0.08106, 0.8576]
+PeriodicSite: O (-0.5716, 1.125, 6.467) [0.3475, 0.7264, 0.9486]
+PeriodicSite: O (-0.5823, 0.1623, 3.749) [0.1303, 0.323, 0.5484]
+PeriodicSite: O (0.271, 1.75, 1.538) [0.2275, 0.4725, 0.2306]
+PeriodicSite: O (0.2146, 2.691, 4.5) [0.4459, 0.8905, 0.6664]
+PeriodicSite: O (2.083, -0.2384, 2.313) [0.5541, 0.1095, 0.3336]
+PeriodicSite: O (2.027, 0.7024, 5.275) [0.7725, 0.5275, 0.7694]
+PeriodicSite: O (2.88, 2.29, 3.064) [0.8697, 0.677, 0.4516]
+PeriodicSite: O (2.869, 1.328, 0.3455) [0.6525, 0.2736, 0.05141]
+PeriodicSite: O (3.603, 4.308, 0.8991) [0.9622, 0.9189, 0.1424],
+[1mtask_ids[0;0m=[MPID(mp-1774424), MPID(mp-868388), MPID(mp-867664), MPID(mp-1785847)],
+[1muncorrected_energy_per_atom[0;0m=-5.641720787500001,
+[1menergy_per_atom[0;0m=-6.394720787500001,
+[1mformation_energy_per_atom[0;0m=-1.6580040295833336,
+[1menergy_above_hull[0;0m=0.08550438249999903,
+[1mis_stable[0;0m=False,
+[1mequilibrium_reaction_energy_per_atom[0;0m=None,
+[1mdecomposes_to[0;0m=[DecompositionProduct(material_id=MPID(mp-22526), formula='Li1 Co1 O2', amount=1.0)],
+[1mxas[0;0m=[XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Co, spectrum_type=<Type.XAFS: 'XAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Co, spectrum_type=<Type.XANES: 'XANES'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Co, spectrum_type=<Type.EXAFS: 'EXAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Li, spectrum_type=<Type.EXAFS: 'EXAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element O, spectrum_type=<Type.EXAFS: 'EXAFS'>)],
+[1mgrain_boundaries[0;0m=None,
+[1mband_gap[0;0m=0.0,
+[1mcbm[0;0m=None,
+[1mvbm[0;0m=None,
+[1mefermi[0;0m=3.77501694,
+[1mis_gap_direct[0;0m=False,
+[1mis_metal[0;0m=True,
+[1mes_source_calc_id[0;0m=None,
+[1mbandstructure[0;0m=None,
+[1mdos[0;0m=None,
+[1mdos_energy_up[0;0m=None,
+[1mdos_energy_down[0;0m=None,
+[1mis_magnetic[0;0m=True,
+[1mordering[0;0m='FM',
+[1mtotal_magnetization[0;0m=3.9988689,
+[1mtotal_magnetization_normalized_vol[0;0m=0.02387217040137367,
+[1mtotal_magnetization_normalized_formula_units[0;0m=0.79977378,
+[1mnum_magnetic_sites[0;0m=3,
+[1mnum_unique_magnetic_sites[0;0m=3,
+[1mtypes_of_magnetic_species[0;0m=[Element Co],
+[1mbulk_modulus[0;0m=None,
+[1mshear_modulus[0;0m=None,
+[1muniversal_anisotropy[0;0m=None,
+[1mhomogeneous_poisson[0;0m=None,
+[1me_total[0;0m=None,
+[1me_ionic[0;0m=None,
+[1me_electronic[0;0m=None,
+[1mn[0;0m=None,
+[1me_ij_max[0;0m=None,
+[1mweighted_surface_energy_EV_PER_ANG2[0;0m=None,
+[1mweighted_surface_energy[0;0m=None,
+[1mweighted_work_function[0;0m=None,
+[1msurface_anisotropy[0;0m=None,
+[1mshape_factor[0;0m=None,
+[1mhas_reconstructed[0;0m=None,
+[1mpossible_species[0;0m=['Li+', 'O2-', 'Co3+'],
+[1mhas_props[0;0m={'materials': True, 'thermo': True, 'xas': True, 'grain_boundaries': False, 'chemenv': True, 'electronic_structure': True, 'absorption': False, 'bandstructure': False, 'dos': False, 'magnetism': True, 'elasticity': False, 'dielectric': False, 'piezoelectric': False, 'surface_properties': False, 'oxi_states': True, 'provenance': True, 'charge_density': True, 'eos': False, 'phonon': False, 'insertion_electrodes': False, 'substrates': True},
+[1mtheoretical[0;0m=True,
+[1mdatabase_IDs[0;0m={},
+[1mfields_not_requested[0;0m=[]
+), [4m[1mMPDataDoc<SummaryDoc>[0;0m[0;0m(
+[1mbuilder_meta[0;0m=EmmetMeta(emmet_version='0.72.20', pymatgen_version='2023.11.12', pull_request=990, database_version='2023.11.1', build_date=datetime.datetime(2023, 11, 22, 19, 47, 44, 984000), license='BY-C'),
+[1mnsites[0;0m=8,
+[1melements[0;0m=[Element Co, Element Li, Element O],
+[1mnelements[0;0m=3,
+[1mcomposition[0;0m=Composition('Li2 Co2 O4'),
+[1mcomposition_reduced[0;0m=Composition('Li1 Co1 O2'),
+[1mformula_pretty[0;0m='LiCoO2',
+[1mformula_anonymous[0;0m='ABC2',
+[1mchemsys[0;0m='Co-Li-O',
+[1mvolume[0;0m=73.73444592182094,
+[1mdensity[0;0m=4.408304144170691,
+[1mdensity_atomic[0;0m=9.216805740227617,
+[1msymmetry[0;0m=SymmetryData(crystal_system=<CrystalSystem.hex_: 'Hexagonal'>, symbol='P6_3mc', number=186, point_group='6mm', symprec=0.1, version='2.0.2'),
+[1mproperty_name[0;0m='summary',
+[1mmaterial_id[0;0m=MPID(mp-753473),
+[1mdeprecated[0;0m=False,
+[1mdeprecation_reasons[0;0m=None,
+[1mlast_updated[0;0m=datetime.datetime(2023, 11, 22, 19, 47, 44, 985000),
+[1morigins[0;0m=[PropertyOrigin(name='structure', task_id=MPID(mp-1408054), last_updated=datetime.datetime(2020, 5, 3, 4, 53, 28, 437000)), PropertyOrigin(name='energy', task_id=MPID(mp-1408054), last_updated=datetime.datetime(2023, 8, 3, 19, 2, 37, 585000)), PropertyOrigin(name='magnetism', task_id=MPID(mp-1408054), last_updated=datetime.datetime(2020, 5, 3, 4, 53, 28, 437000)), PropertyOrigin(name='dielectric', task_id=MPID(mp-1117433), last_updated=datetime.datetime(2017, 3, 6, 13, 37, 52)), PropertyOrigin(name='piezoelectric', task_id=MPID(mp-1117433), last_updated=datetime.datetime(2017, 3, 6, 13, 37, 52))],
+[1mwarnings[0;0m=[],
+[1mstructure[0;0m=Structure Summary
+Lattice
+    abc : 2.938550043049463 2.938550043049463 9.859925
+ angles : 90.0 90.0 120.00000096922956
+ volume : 73.73444592182094
+      A : 1.469275 -2.544859 0.0
+      B : 1.469275 2.544859 0.0
+      C : 0.0 0.0 9.859925
+    pbc : True True True
+PeriodicSite: Li (1.469, -0.8483, 2.546) [0.6667, 0.3333, 0.2582]
+PeriodicSite: Li (1.469, 0.8483, 7.476) [0.3333, 0.6667, 0.7582]
+PeriodicSite: Co (1.469, -0.8483, 0.005058) [0.6667, 0.3333, 0.000513]
+PeriodicSite: Co (1.469, 0.8483, 4.935) [0.3333, 0.6667, 0.5005]
+PeriodicSite: O (0.0, 0.0, 8.743) [0.0, 0.0, 0.8868]
+PeriodicSite: O (0.0, 0.0, 3.813) [0.0, 0.0, 0.3868]
+PeriodicSite: O (1.469, -0.8483, 6.049) [0.6667, 0.3333, 0.6134]
+PeriodicSite: O (1.469, 0.8483, 1.119) [0.3333, 0.6667, 0.1134],
+[1mtask_ids[0;0m=[MPID(mp-801836), MPID(mp-1774433), MPID(mp-1117433), MPID(mp-828881), MPID(mp-826709), MPID(mp-765899), MPID(mp-1408054), MPID(mp-809202), MPID(mp-808542), MPID(mp-825957), MPID(mp-1801492), MPID(mp-753473)],
+[1muncorrected_energy_per_atom[0;0m=-5.63397074125,
+[1menergy_per_atom[0;0m=-6.38697074125,
+[1mformation_energy_per_atom[0;0m=-1.6502539833333332,
+[1menergy_above_hull[0;0m=0.0932544287499999,
+[1mis_stable[0;0m=False,
+[1mequilibrium_reaction_energy_per_atom[0;0m=None,
+[1mdecomposes_to[0;0m=[DecompositionProduct(material_id=MPID(mp-22526), formula='Li1 Co1 O2', amount=1.0)],
+[1mxas[0;0m=[XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Li, spectrum_type=<Type.XANES: 'XANES'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element O, spectrum_type=<Type.XANES: 'XANES'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Co, spectrum_type=<Type.XANES: 'XANES'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element O, spectrum_type=<Type.XAFS: 'XAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Li, spectrum_type=<Type.XAFS: 'XAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Co, spectrum_type=<Type.XAFS: 'XAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element O, spectrum_type=<Type.EXAFS: 'EXAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Co, spectrum_type=<Type.EXAFS: 'EXAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Li, spectrum_type=<Type.EXAFS: 'EXAFS'>)],
+[1mgrain_boundaries[0;0m=None,
+[1mband_gap[0;0m=0.8952,
+[1mcbm[0;0m=3.291,
+[1mvbm[0;0m=2.3958,
+[1mefermi[0;0m=2.54496093,
+[1mis_gap_direct[0;0m=False,
+[1mis_metal[0;0m=False,
+[1mes_source_calc_id[0;0m=None,
+[1mbandstructure[0;0m=BandstructureData(setyawan_curtarolo=BandStructureSummaryData(task_id=MPID(mp-809202), band_gap=0.8952, cbm={'band_index': {'-1': [20]}, 'kpoint_index': ['32'], 'kpoint': <pymatgen.electronic_structure.bandstructure.Kpoint object at 0x7fd331becd00>, 'energy': 3.291, 'projections': {}}, vbm={'band_index': {'1': [26, 27]}, 'kpoint_index': [0, 71, 72], 'kpoint': <pymatgen.electronic_structure.bandstructure.Kpoint object at 0x7fd331bf2250>, 'energy': 2.3958, 'projections': {}}, efermi=2.54496093, is_gap_direct=False, is_metal=False, magnetic_ordering='FM', nbands=54.0, equivalent_labels={'setyawan_curtarolo': {'latimer_munro': {'\\Gamma': 'Γ', 'A': 'c', 'H': 'q', 'K': 'd', 'L': 'e', 'M': 'a'}, 'hinuma': {'\\Gamma': 'GAMMA', 'A': 'A', 'H': 'H', 'K': 'K', 'L': 'L', 'M': 'M'}}, 'latimer_munro': {'setyawan_curtarolo': {'a': 'M', 'Γ': '\\Gamma', 'q': 'H', 'e': 'L', 'c': 'A', 'd': 'K'}, 'hinuma': {'a': 'M', 'Γ': 'GAMMA', 'q': 'H', 'e': 'L', 'c': 'A', 'd': 'K'}}, 'hinuma': {'setyawan_curtarolo': {'GAMMA': '\\Gamma', 'A': 'A', 'K': 'K', 'H': 'H', 'M': 'M', 'L': 'L', 'H_2': 'H^{*}'}, 'latimer_munro': {'GAMMA': 'Γ', 'A': 'c', 'K': 'd', 'H': 'q', 'M': 'a', 'L': 'e', 'H_2': 'q^{*}'}}}, direct_gap=1.4313), hinuma=None, latimer_munro=None),
+[1mdos[0;0m=DosData(total={'1': DosSummaryData(task_id=MPID(mp-808542), band_gap=4.7547999999999995, cbm=7.3259, vbm=2.5711, efermi=2.45222927, spin_polarization=1.0), '-1': DosSummaryData(task_id=MPID(mp-808542), band_gap=1.1886999999999999, cbm=3.2843, vbm=2.0956, efermi=2.45222927, spin_polarization=1.0)}, elemental={Element Li: {'total': {'1': DosSummaryData(task_id=MPID(mp-808542), band_gap=4.7547999999999995, cbm=7.3259, vbm=2.5711, efermi=2.45222927, spin_polarization=None), '-1': DosSummaryData(task_id=MPID(mp-808542), band_gap=1.1886999999999999, cbm=3.2843, vbm=2.0956, efermi=2.45222927, spin_polarization=None)}, 's': {'1': DosSummaryData(task_id=MPID(mp-808542), band_gap=5.2303, cbm=7.3259, vbm=2.0956, efermi=2.45222927, spin_polarization=None), '-1': DosSummaryData(task_id=MPID(mp-808542), band_gap=1.1886999999999999, cbm=3.2843, vbm=2.0956, efermi=2.45222927, spin_polarization=None)}, 'p': {'1': DosSummaryData(task_id=MPID(mp-808542), band_gap=5.4681, cbm=8.0392, vbm=2.5711, efermi=2.45222927, spin_polarization=None), '-1': DosSummaryData(task_id=MPID(mp-808542), band_gap=1.1886999999999999, cbm=3.2843, vbm=2.0956, efermi=2.45222927, spin_polarization=None)}, 'd': {'1': DosSummaryData(task_id=MPID(mp-808542), band_gap=71.3224, cbm=26.8207, vbm=-44.5017, efermi=2.45222927, spin_polarization=None), '-1': DosSummaryData(task_id=MPID(mp-808542), band_gap=71.3224, cbm=26.8207, vbm=-44.5017, efermi=2.45222927, spin_polarization=None)}}, Element Co: {'total': {'1': DosSummaryData(task_id=MPID(mp-808542), band_gap=4.7547999999999995, cbm=7.3259, vbm=2.5711, efermi=2.45222927, spin_polarization=None), '-1': DosSummaryData(task_id=MPID(mp-808542), band_gap=1.1886999999999999, cbm=3.2843, vbm=2.0956, efermi=2.45222927, spin_polarization=None)}, 's': {'1': DosSummaryData(task_id=MPID(mp-808542), band_gap=5.468, cbm=7.3259, vbm=1.8579, efermi=2.45222927, spin_polarization=None), '-1': DosSummaryData(task_id=MPID(mp-808542), band_gap=1.1886999999999999, cbm=3.2843, vbm=2.0956, efermi=2.45222927, spin_polarization=None)}, 'p': {'1': DosSummaryData(task_id=MPID(mp-808542), band_gap=5.943599999999999, cbm=8.0392, vbm=2.0956, efermi=2.45222927, spin_polarization=None), '-1': DosSummaryData(task_id=MPID(mp-808542), band_gap=1.1886999999999999, cbm=3.2843, vbm=2.0956, efermi=2.45222927, spin_polarization=None)}, 'd': {'1': DosSummaryData(task_id=MPID(mp-808542), band_gap=7.132200000000001, cbm=9.7033, vbm=2.5711, efermi=2.45222927, spin_polarization=None), '-1': DosSummaryData(task_id=MPID(mp-808542), band_gap=1.1886999999999999, cbm=3.2843, vbm=2.0956, efermi=2.45222927, spin_polarization=None)}}, Element O: {'total': {'1': DosSummaryData(task_id=MPID(mp-808542), band_gap=4.7547999999999995, cbm=7.3259, vbm=2.5711, efermi=2.45222927, spin_polarization=None), '-1': DosSummaryData(task_id=MPID(mp-808542), band_gap=1.1886999999999999, cbm=3.2843, vbm=2.0956, efermi=2.45222927, spin_polarization=None)}, 's': {'1': DosSummaryData(task_id=MPID(mp-808542), band_gap=5.2303, cbm=7.3259, vbm=2.0956, efermi=2.45222927, spin_polarization=None), '-1': DosSummaryData(task_id=MPID(mp-808542), band_gap=1.4264, cbm=3.2843, vbm=1.8579, efermi=2.45222927, spin_polarization=None)}, 'p': {'1': DosSummaryData(task_id=MPID(mp-808542), band_gap=5.4681, cbm=8.0392, vbm=2.5711, efermi=2.45222927, spin_polarization=None), '-1': DosSummaryData(task_id=MPID(mp-808542), band_gap=1.1886999999999999, cbm=3.2843, vbm=2.0956, efermi=2.45222927, spin_polarization=None)}, 'd': {'1': DosSummaryData(task_id=MPID(mp-808542), band_gap=71.3224, cbm=26.8207, vbm=-44.5017, efermi=2.45222927, spin_polarization=None), '-1': DosSummaryData(task_id=MPID(mp-808542), band_gap=71.3224, cbm=26.8207, vbm=-44.5017, efermi=2.45222927, spin_polarization=None)}}}, orbital={'s': {'1': DosSummaryData(task_id=MPID(mp-808542), band_gap=5.2303, cbm=7.3259, vbm=2.0956, efermi=2.45222927, spin_polarization=None), '-1': DosSummaryData(task_id=MPID(mp-808542), band_gap=1.1886999999999999, cbm=3.2843, vbm=2.0956, efermi=2.45222927, spin_polarization=None)}, 'p': {'1': DosSummaryData(task_id=MPID(mp-808542), band_gap=5.4681, cbm=8.0392, vbm=2.5711, efermi=2.45222927, spin_polarization=None), '-1': DosSummaryData(task_id=MPID(mp-808542), band_gap=1.1886999999999999, cbm=3.2843, vbm=2.0956, efermi=2.45222927, spin_polarization=None)}, 'd': {'1': DosSummaryData(task_id=MPID(mp-808542), band_gap=7.132200000000001, cbm=9.7033, vbm=2.5711, efermi=2.45222927, spin_polarization=None), '-1': DosSummaryData(task_id=MPID(mp-808542), band_gap=1.1886999999999999, cbm=3.2843, vbm=2.0956, efermi=2.45222927, spin_polarization=None)}}, magnetic_ordering='FM'),
+[1mdos_energy_up[0;0m=None,
+[1mdos_energy_down[0;0m=None,
+[1mis_magnetic[0;0m=False,
+[1mordering[0;0m='NM',
+[1mtotal_magnetization[0;0m=2.3e-05,
+[1mtotal_magnetization_normalized_vol[0;0m=3.1193019371687434e-07,
+[1mtotal_magnetization_normalized_formula_units[0;0m=1.15e-05,
+[1mnum_magnetic_sites[0;0m=0,
+[1mnum_unique_magnetic_sites[0;0m=0,
+[1mtypes_of_magnetic_species[0;0m=[],
+[1mbulk_modulus[0;0m=None,
+[1mshear_modulus[0;0m=None,
+[1muniversal_anisotropy[0;0m=None,
+[1mhomogeneous_poisson[0;0m=None,
+[1me_total[0;0m=15.860626160001567,
+[1me_ionic[0;0m=9.354488290001568,
+[1me_electronic[0;0m=6.50613787,
+[1mn[0;0m=2.550713208104745,
+[1me_ij_max[0;0m=0.638095012560238,
+[1mweighted_surface_energy_EV_PER_ANG2[0;0m=None,
+[1mweighted_surface_energy[0;0m=None,
+[1mweighted_work_function[0;0m=None,
+[1msurface_anisotropy[0;0m=None,
+[1mshape_factor[0;0m=None,
+[1mhas_reconstructed[0;0m=None,
+[1mpossible_species[0;0m=['Co3+', 'O2-', 'Li+'],
+[1mhas_props[0;0m={'materials': True, 'thermo': True, 'xas': True, 'grain_boundaries': False, 'chemenv': True, 'electronic_structure': True, 'absorption': False, 'bandstructure': True, 'dos': True, 'magnetism': True, 'elasticity': False, 'dielectric': True, 'piezoelectric': True, 'surface_properties': False, 'oxi_states': True, 'provenance': True, 'charge_density': True, 'eos': False, 'phonon': False, 'insertion_electrodes': True, 'substrates': True},
+[1mtheoretical[0;0m=True,
+[1mdatabase_IDs[0;0m={},
+[1mfields_not_requested[0;0m=[]
+), [4m[1mMPDataDoc<SummaryDoc>[0;0m[0;0m(
+[1mbuilder_meta[0;0m=EmmetMeta(emmet_version='0.72.20', pymatgen_version='2023.11.12', pull_request=990, database_version='2023.11.1', build_date=datetime.datetime(2023, 11, 22, 19, 50, 49, 804000), license='BY-C'),
+[1mnsites[0;0m=16,
+[1melements[0;0m=[Element Co, Element Li, Element O],
+[1mnelements[0;0m=3,
+[1mcomposition[0;0m=Composition('Li4 Co4 O8'),
+[1mcomposition_reduced[0;0m=Composition('Li1 Co1 O2'),
+[1mformula_pretty[0;0m='LiCoO2',
+[1mformula_anonymous[0;0m='ABC2',
+[1mchemsys[0;0m='Co-Li-O',
+[1mvolume[0;0m=138.59356673491925,
+[1mdensity[0;0m=4.690605360449198,
+[1mdensity_atomic[0;0m=8.662097920932453,
+[1msymmetry[0;0m=SymmetryData(crystal_system=<CrystalSystem.ortho: 'Orthorhombic'>, symbol='Imma', number=74, point_group='mmm', symprec=0.1, version='2.0.2'),
+[1mproperty_name[0;0m='summary',
+[1mmaterial_id[0;0m=MPID(mp-853240),
+[1mdeprecated[0;0m=False,
+[1mdeprecation_reasons[0;0m=None,
+[1mlast_updated[0;0m=datetime.datetime(2023, 11, 22, 19, 50, 49, 804000),
+[1morigins[0;0m=[PropertyOrigin(name='structure', task_id=MPID(mp-1928647), last_updated=datetime.datetime(2021, 2, 9, 11, 28, 19, 472000)), PropertyOrigin(name='energy', task_id=MPID(mp-1928647), last_updated=datetime.datetime(2023, 8, 3, 19, 2, 33, 280000)), PropertyOrigin(name='electronic_structure', task_id=MPID(mp-1928647), last_updated=datetime.datetime(2021, 2, 9, 11, 28, 19, 472000)), PropertyOrigin(name='magnetism', task_id=MPID(mp-1928647), last_updated=datetime.datetime(2021, 2, 9, 11, 28, 19, 472000))],
+[1mwarnings[0;0m=[],
+[1mstructure[0;0m=Structure Summary
+Lattice
+    abc : 5.848415074838738 5.78492064337256 5.847947727464226
+ angles : 120.3257158652452 89.55186718954499 59.97640131814754
+ volume : 138.59356673491925
+      A : 0.022812 3.355164 -4.790231
+      B : -2.877914 5.018151 -0.032839
+      C : 5.847381 -0.050828 -0.063597
+    pbc : True True True
+PeriodicSite: Li (5.859, 1.627, -2.459) [0.5, 1.4e-05, 1.0]
+PeriodicSite: Li (1.496, 4.161, -2.443) [0.5, 0.5, 0.5]
+PeriodicSite: Li (2.969, 4.967, -0.09661) [3.6e-05, 1.0, 1.0]
+PeriodicSite: Li (4.42, 4.136, -2.475) [0.5, 0.5, 1.0]
+PeriodicSite: Co (4.408, 2.458, -0.08007) [1.2e-05, 0.5, 1.0]
+PeriodicSite: Co (1.485, 2.484, -0.04826) [9e-06, 0.5, 0.5]
+PeriodicSite: Co (0.0571, 6.67, -2.46) [0.5, 1.0, 0.5]
+PeriodicSite: Co (2.924, -0.02538, -0.03184) [8e-06, 1e-06, 0.5]
+PeriodicSite: O (-1.295, 7.504, -3.735) [0.7695, 0.9835, 0.2595]
+PeriodicSite: O (-0.01349, 5.123, -3.657) [0.7565, 0.5176, 0.2495]
+PeriodicSite: O (-0.03646, 3.33, -1.106) [0.224, 0.5163, 0.247]
+PeriodicSite: O (1.435, 7.473, -3.759) [0.7683, 0.9829, 0.7261]
+PeriodicSite: O (1.557, 0.8494, -1.128) [0.2317, 0.01713, 0.2738]
+PeriodicSite: O (3.029, 4.993, -3.781) [0.776, 0.4837, 0.753]
+PeriodicSite: O (3.006, 3.199, -1.23) [0.2435, 0.4824, 0.7505]
+PeriodicSite: O (4.288, 0.8187, -1.152) [0.2305, 0.0165, 0.7405],
+[1mtask_ids[0;0m=[MPID(mp-1928647), MPID(mp-1774420), MPID(mp-853240)],
+[1muncorrected_energy_per_atom[0;0m=-5.69032549375,
+[1menergy_per_atom[0;0m=-6.44332549375,
+[1mformation_energy_per_atom[0;0m=-1.706608735833333,
+[1menergy_above_hull[0;0m=0.03689967625000001,
+[1mis_stable[0;0m=False,
+[1mequilibrium_reaction_energy_per_atom[0;0m=None,
+[1mdecomposes_to[0;0m=[DecompositionProduct(material_id=MPID(mp-22526), formula='Li1 Co1 O2', amount=1.0)],
+[1mxas[0;0m=[XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Co, spectrum_type=<Type.XAFS: 'XAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Co, spectrum_type=<Type.XANES: 'XANES'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Co, spectrum_type=<Type.EXAFS: 'EXAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element Li, spectrum_type=<Type.EXAFS: 'EXAFS'>), XASSearchData(edge=<Edge.K: 'K'>, absorbing_element=Element O, spectrum_type=<Type.EXAFS: 'EXAFS'>)],
+[1mgrain_boundaries[0;0m=None,
+[1mband_gap[0;0m=1.8839000000000001,
+[1mcbm[0;0m=4.1681,
+[1mvbm[0;0m=2.2842,
+[1mefermi[0;0m=2.28425005,
+[1mis_gap_direct[0;0m=False,
+[1mis_metal[0;0m=False,
+[1mes_source_calc_id[0;0m=None,
+[1mbandstructure[0;0m=None,
+[1mdos[0;0m=None,
+[1mdos_energy_up[0;0m=None,
+[1mdos_energy_down[0;0m=None,
+[1mis_magnetic[0;0m=False,
+[1mordering[0;0m='NM',
+[1mtotal_magnetization[0;0m=0.0003317,
+[1mtotal_magnetization_normalized_vol[0;0m=2.393328982105103e-06,
+[1mtotal_magnetization_normalized_formula_units[0;0m=8.2925e-05,
+[1mnum_magnetic_sites[0;0m=0,
+[1mnum_unique_magnetic_sites[0;0m=0,
+[1mtypes_of_magnetic_species[0;0m=[],
+[1mbulk_modulus[0;0m=None,
+[1mshear_modulus[0;0m=None,
+[1muniversal_anisotropy[0;0m=None,
+[1mhomogeneous_poisson[0;0m=None,
+[1me_total[0;0m=None,
+[1me_ionic[0;0m=None,
+[1me_electronic[0;0m=None,
+[1mn[0;0m=None,
+[1me_ij_max[0;0m=None,
+[1mweighted_surface_energy_EV_PER_ANG2[0;0m=None,
+[1mweighted_surface_energy[0;0m=None,
+[1mweighted_work_function[0;0m=None,
+[1msurface_anisotropy[0;0m=None,
+[1mshape_factor[0;0m=None,
+[1mhas_reconstructed[0;0m=None,
+[1mpossible_species[0;0m=['O2-', 'Li+', 'Co3+'],
+[1mhas_props[0;0m={'materials': True, 'thermo': True, 'xas': True, 'grain_boundaries': False, 'chemenv': True, 'electronic_structure': True, 'absorption': False, 'bandstructure': False, 'dos': False, 'magnetism': True, 'elasticity': False, 'dielectric': False, 'piezoelectric': False, 'surface_properties': False, 'oxi_states': True, 'provenance': True, 'charge_density': True, 'eos': False, 'phonon': False, 'insertion_electrodes': True, 'substrates': True},
+[1mtheoretical[0;0m=True,
+[1mdatabase_IDs[0;0m={},
+[1mfields_not_requested[0;0m=[]
+)]
