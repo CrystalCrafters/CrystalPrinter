@@ -5,3 +5,4 @@ trimesh~=4.3.2
 pyvista~=0.43.8
 stl~=0.0.3
 ase~=3.22.1
+gunicorn
