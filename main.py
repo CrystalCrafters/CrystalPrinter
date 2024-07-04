@@ -13,55 +13,74 @@ if not os.path.exists(UPLOAD_DIRECTORY):
     os.makedirs(UPLOAD_DIRECTORY)
 
 # Dash setup
-app = Dash(__name__)
+app = Dash(__name__, suppress_callback_exceptions=True)
 server = app.server
 
 app.layout = html.Div(
     style={"width": "100%", "height": "100%"},
     children=[
-        dcc.Upload(
-            id="upload-cif",
-            children=html.Div(["Drag and Drop or ", html.A("Select a CIF File")]),
-            style={
-                "width": "100%",
-                "height": "60px",
-                "lineHeight": "60px",
-                "borderWidth": "1px",
-                "borderStyle": "dashed",
-                "borderRadius": "5px",
-                "textAlign": "center",
-                "margin": "10px",
-            },
-            multiple=False,
-        ),
-        html.Div(id="output-upload", style={"margin": "10px"}),
         html.Div([
-            html.Label("Number of Unit Cells (x, y, z):"),
-            dcc.Input(id="num-unit-cells-x", type="number", value=1),
-            dcc.Input(id="num-unit-cells-y", type="number", value=1),
-            dcc.Input(id="num-unit-cells-z", type="number", value=1),
-        ], style={"margin": "10px"}),
-        html.Div([
-            html.Label("Rotation Angles (x, y, z):"),
-            dcc.Input(id="rotation-x", type="number", value=0),
-            dcc.Input(id="rotation-y", type="number", value=0),
-            dcc.Input(id="rotation-z", type="number", value=0),
-        ], style={"margin": "10px"}),
-        html.Div([
-            html.Label("Translation Vector (x, y, z):"),
-            dcc.Input(id="translation-x", type="number", value=0),
-            dcc.Input(id="translation-y", type="number", value=0),
-            dcc.Input(id="translation-z", type="number", value=0),
-        ], style={"margin": "10px"}),
-        html.Div([
-            html.Label("Base Level:"),
-            dcc.Input(id="base-level", type="number", value=0),
-        ], style={"margin": "10px"}),
-        html.Button("Generate STL", id="generate-stl", n_clicks=0, style={"margin": "10px"}),
-        html.Div(id="output-stl-path", style={"margin": "10px"}),
-        html.Div(id="output-stl", style={"margin": "10px", "height": "400px"}),
+            html.Button("Reciprocal Lattice", id="reciprocal-lattice-btn", n_clicks=0),
+            html.Button("Crystal Lattice", id="crystal-lattice-btn", n_clicks=0),
+        ], style={"textAlign": "center", "margin": "10px"}),
+        html.Div(id="feature-content", style={"margin": "10px"})
     ],
 )
+
+@app.callback(
+    Output("feature-content", "children"),
+    [Input("reciprocal-lattice-btn", "n_clicks"),
+     Input("crystal-lattice-btn", "n_clicks")]
+)
+def display_feature(rec_lattice_clicks, cry_lattice_clicks):
+    if cry_lattice_clicks > rec_lattice_clicks:
+        return [
+            dcc.Upload(
+                id="upload-cif",
+                children=html.Div(["Drag and Drop or ", html.A("Select a CIF File")]),
+                style={
+                    "width": "100%",
+                    "height": "60px",
+                    "lineHeight": "60px",
+                    "borderWidth": "1px",
+                    "borderStyle": "dashed",
+                    "borderRadius": "5px",
+                    "textAlign": "center",
+                    "margin": "10px",
+                },
+                multiple=False,
+            ),
+            html.Div(id="output-upload", style={"margin": "10px"}),
+            html.Div([
+                html.Label("Number of Unit Cells (x, y, z):"),
+                dcc.Input(id="num-unit-cells-x", type="number", value=1),
+                dcc.Input(id="num-unit-cells-y", type="number", value=1),
+                dcc.Input(id="num-unit-cells-z", type="number", value=1),
+            ], style={"margin": "10px"}),
+            html.Div([
+                html.Label("Rotation Angles (x, y, z):"),
+                dcc.Input(id="rotation-x", type="number", value=0),
+                dcc.Input(id="rotation-y", type="number", value=0),
+                dcc.Input(id="rotation-z", type="number", value=0),
+            ], style={"margin": "10px"}),
+            html.Div([
+                html.Label("Translation Vector (x, y, z):"),
+                dcc.Input(id="translation-x", type="number", value=0),
+                dcc.Input(id="translation-y", type="number", value=0),
+                dcc.Input(id="translation-z", type="number", value=0),
+            ], style={"margin": "10px"}),
+            html.Div([
+                html.Label("Base Level:"),
+                dcc.Input(id="base-level", type="number", value=0),
+            ], style={"margin": "10px"}),
+            html.Button("Generate STL", id="generate-stl", n_clicks=0, style={"margin": "10px"}),
+            html.Div(id="output-stl-path", style={"display": "none"}),
+            html.Div(id="output-stl", style={"margin": "10px", "height": "400px"}),
+        ]
+    elif rec_lattice_clicks > cry_lattice_clicks:
+        return html.Div("Feature in progress")
+
+    return "Select an option to proceed."
 
 @app.callback(
     Output("output-upload", "children"),
