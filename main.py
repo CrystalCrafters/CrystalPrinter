@@ -12,6 +12,13 @@ UPLOAD_DIRECTORY = "uploads"
 if not os.path.exists(UPLOAD_DIRECTORY):
     os.makedirs(UPLOAD_DIRECTORY)
 
+# Function to clear the upload directory
+def clear_upload_directory():
+    for filename in os.listdir(UPLOAD_DIRECTORY):
+        file_path = os.path.join(UPLOAD_DIRECTORY, filename)
+        if os.path.isfile(file_path):
+            os.remove(file_path)
+
 # Dash setup
 app = Dash(__name__, suppress_callback_exceptions=True)
 server = app.server
@@ -89,6 +96,7 @@ def display_feature(rec_lattice_clicks, cry_lattice_clicks):
 )
 def save_upload(contents, filename):
     if contents is not None:
+        clear_upload_directory()  # Clear the upload directory before saving the new file
         data = contents.encode("utf8").split(b";base64,")[1]
         cif_path = os.path.join(UPLOAD_DIRECTORY, filename)
         with open(cif_path, "wb") as fp:
