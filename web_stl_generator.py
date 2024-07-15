@@ -1,5 +1,3 @@
-# web-stl-generator.py
-
 import os
 import numpy as np
 import trimesh
@@ -8,8 +6,7 @@ import pyvista as pv
 from cif_reader import get_structure_with_cif, bond_by_nearest_neighbors
 from geometry_processor import add_supports, rotate_structure, translate_structure  # Import the support functions
 
-
-def generate_stl_from_params(file_path, num_unit_cells, rotation_angles, translation_vector, base_level):
+def generate_stl_from_params(file_path, num_unit_cells, rotation_angles, translation_vector, base_level, is_primitive, target_atoms, site_index_spin, tolerance, add_supports_flag):
     stl_file_path = file_path.replace('.cif', '.stl')
     new_min, new_max = 0.3, 1.5
 
@@ -85,12 +82,14 @@ def generate_stl_from_params(file_path, num_unit_cells, rotation_angles, transla
     def export_to_stl(mesh, file_path):
         mesh.export(file_path)
 
-    unique_atoms = get_structure_with_cif(file_path=file_path, num_unit_cells=num_unit_cells)
+    unique_atoms = get_structure_with_cif(file_path=file_path, num_unit_cells=num_unit_cells, is_primitive=is_primitive, target_atoms=target_atoms, magnetic_spin_atoms=None, site_index_spin=site_index_spin)
     unique_atoms = rotate_structure(unique_atoms, rotation_angles)
     unique_atoms = translate_structure(unique_atoms, translation_vector)
-    unique_atoms = bond_by_nearest_neighbors(unique_atoms)
+    unique_atoms = bond_by_nearest_neighbors(unique_atoms, tolerance=tolerance)
     mesh = atoms_and_bonds_to_mesh(unique_atoms)
-    mesh = add_supports(mesh, unique_atoms, atomic_radii, base_level=base_level)
+
+    if add_supports_flag:
+        mesh = add_supports(mesh, unique_atoms, atomic_radii, base_level=base_level)
 
     export_to_stl(mesh, stl_file_path)
 

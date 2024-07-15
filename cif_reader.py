@@ -87,11 +87,11 @@ def add_magnetic_spin_info(unique_atoms, magnetic_spin_atoms=None, site_index_sp
 
     magnetic_spin_atoms:
         A dictionary where keys are atom labels and values are the direction of the magnetic spin.
-        Example: {"Fe": "up", "Ni": "down"}
+        Example: {"Fe": [0, 0, 1], "Ni": [0, 0, -1]} (normalized vectors)
 
     site_index_spin:
         A dictionary where keys are site indices and values are the direction of the magnetic spin.
-        Example: {0: "up", 1: "down"}
+        Example: {0: [0, 0, 1], 1: [0, 0, -1]} (normalized vectors)
     """
     for atom in unique_atoms:
         atom_label = atom['atom_label']
@@ -101,8 +101,9 @@ def add_magnetic_spin_info(unique_atoms, magnetic_spin_atoms=None, site_index_sp
         elif magnetic_spin_atoms and atom_label in magnetic_spin_atoms:
             atom['magnetic_spin'] = {"direction": magnetic_spin_atoms[atom_label]}
         else:
-            atom['magnetic_spin'] = {"direction": "none"}
+            atom['magnetic_spin'] = {"direction": [0, 0, 0]}  # No spin
     return unique_atoms
+
 
 # Define an asynchronous function to fetch material summaries from the Materials Project database
 async def fetch_materials(**kwargs):

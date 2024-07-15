@@ -44,19 +44,23 @@ filtered_radii = {k: v for k, v in atomic_radii.items() if v is not None}
 min_radii = min(filtered_radii.values())
 max_radii = max(filtered_radii.values())
 
+
 # Scale function
 def scale_radius(radius):
     return new_min + (new_max - new_min) * (radius - min_radii) / (max_radii - min_radii)
 
+
 # Apply the scale transformation
 atomic_radii = {atom: scale_radius(radius) if radius is not None else None for atom, radius in atomic_radii.items()}
 bond_radius = 0.25
+
 
 def create_sphere(position, radius=0.5, color=(0, 0, 0)):
     sphere = trimesh.creation.icosphere(radius=radius)
     sphere.apply_translation(position)
     sphere.visual.vertex_colors = np.array([color] * len(sphere.vertices), dtype=np.uint8)
     return sphere
+
 
 def create_cylinder(start, end, radius=0.1):
     vec = np.array(end) - np.array(start)
@@ -69,14 +73,34 @@ def create_cylinder(start, end, radius=0.1):
     cylinder.apply_translation(midpoint)
     return cylinder
 
+
 def create_arrow(start, direction, length=2.0, shaft_radius=0.2, tip_radius=0.4, tip_length=0.8):
-    end = np.array(start) + np.array(direction) * length
-    arrow_body = create_cylinder(start, end, shaft_radius)
+    # Convert direction to float to avoid casting errors
+    direction = np.array(direction, dtype=float)
+
+    # Normalize direction vector
+    direction /= np.linalg.norm(direction)
+
+    # Create the cylinder (shaft of the arrow)
+    cylinder = trimesh.creation.cylinder(radius=shaft_radius, height=length)
+    cylinder.apply_translation([0, 0, length / 2])
+
+    # Create the cone (tip of the arrow)
     cone = trimesh.creation.cone(radius=tip_radius, height=tip_length)
-    cone.apply_translation(end)
+    cone.apply_translation([0, 0, length*0.9 + tip_length / 2])
+
+    # Combine cylinder and cone
+    arrow = trimesh.util.concatenate(cylinder, cone)
+
+    # Align arrow direction
     align_matrix = trimesh.geometry.align_vectors([0, 0, 1], direction)
-    cone.apply_transform(align_matrix)
-    return arrow_body + cone
+    arrow.apply_transform(align_matrix)
+
+    # Translate the arrow to the start position
+    arrow.apply_translation(start)
+
+    return arrow
+
 
 def atoms_and_bonds_to_mesh(structure):
     atoms_and_bonds_mesh = trimesh.Trimesh()
@@ -93,20 +117,22 @@ def atoms_and_bonds_to_mesh(structure):
             bond_cylinder = create_cylinder(start, end, radius=bond_radius)
             atoms_and_bonds_mesh += bond_cylinder
 
-        if 'magnetic_spin' in atom and atom['magnetic_spin']['direction'] != 'none':
-            direction_map = {'up': [0, 0, 1], 'down': [0, 0, -1]}
-            direction = direction_map.get(atom['magnetic_spin']['direction'], [0, 0, 0])
+        if 'magnetic_spin' in atom and atom['magnetic_spin']['direction'] != [0, 0, 0]:
+            direction = np.array(atom['magnetic_spin']['direction'])
             spin_length = atom_radius * 1.5  # Scale the arrow length according to the atom's radius
             spin_shaft_radius = atom_radius * 0.15  # Scale the shaft radius
             spin_tip_radius = atom_radius * 0.3  # Scale the tip radius
             spin_tip_length = atom_radius * 0.3  # Scale the tip length
-            magnetic_spins.append((atom['cartesian_position'], direction, spin_length, spin_shaft_radius, spin_tip_radius, spin_tip_length))
+            magnetic_spins.append((atom['cartesian_position'], direction, spin_length, spin_shaft_radius,
+                                   spin_tip_radius, spin_tip_length))
 
     for pos, direction, length, shaft_radius, tip_radius, tip_length in magnetic_spins:
-        arrow = create_arrow(pos, direction, length=length, shaft_radius=shaft_radius, tip_radius=tip_radius, tip_length=tip_length)
+        arrow = create_arrow(pos, direction, length=length, shaft_radius=shaft_radius, tip_radius=tip_radius,
+                             tip_length=tip_length)
         atoms_and_bonds_mesh += arrow
 
     return atoms_and_bonds_mesh
+
 
 def export_to_stl(mesh, file_path):
     mesh.export(file_path)
@@ -115,7 +141,7 @@ def export_to_stl(mesh, file_path):
 unique_atoms = get_structure_with_cif(
     file_path=file_path,
     num_unit_cells=num_unit_cells,
-    magnetic_spin_atoms={"Yb": "up"}
+    magnetic_spin_atoms={"Yb": [90, 0, 0]}  # Example of specifying a direction vector for Yb atoms
 )
 
 # Ensure unique_atoms is not None before proceeding
