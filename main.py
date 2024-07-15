@@ -28,17 +28,18 @@ app.layout = html.Div(
         "width": "100%",
         "height": "100%",
         "backgroundColor": "#f8f9fa",
-        "fontFamily": "Arial, sans-serif"
+        "fontFamily": "Arial, sans-serif",
+        "padding": "20px"
     },
     children=[
         html.Div([
-            html.H1("Crystal Lattice & Reciprocal Lattice Generator", style={"textAlign": "center", "padding": "20px", "color": "#343a40"}),
+            html.H1("Crystal Lattice & Reciprocal Lattice Generator", style={"textAlign": "center", "color": "#343a40"}),
             html.Div([
                 html.Button("Reciprocal Lattice", id="reciprocal-lattice-btn", n_clicks=0, style={"padding": "10px 20px", "margin": "5px", "backgroundColor": "#007bff", "color": "white", "border": "none", "borderRadius": "5px"}),
                 html.Button("Crystal Lattice", id="crystal-lattice-btn", n_clicks=0, style={"padding": "10px 20px", "margin": "5px", "backgroundColor": "#28a745", "color": "white", "border": "none", "borderRadius": "5px"}),
             ], style={"textAlign": "center", "margin": "20px 0"}),
-        ], style={"boxShadow": "0 4px 8px 0 rgba(0,0,0,0.2)", "padding": "20px", "borderRadius": "10px", "backgroundColor": "white", "margin": "20px"}),
-        html.Div(id="feature-content", style={"margin": "10px", "padding": "20px", "backgroundColor": "white", "borderRadius": "10px", "boxShadow": "0 4px 8px 0 rgba(0,0,0,0.2)"})
+        ], style={"boxShadow": "0 4px 8px 0 rgba(0,0,0,0.2)", "padding": "20px", "borderRadius": "10px", "backgroundColor": "white", "margin": "20px auto", "width": "80%"}),
+        html.Div(id="feature-content", style={"margin": "10px auto", "padding": "20px", "backgroundColor": "white", "borderRadius": "10px", "boxShadow": "0 4px 8px 0 rgba(0,0,0,0.2)", "width": "80%"})
     ],
 )
 
@@ -61,33 +62,33 @@ def display_feature(rec_lattice_clicks, cry_lattice_clicks):
                     "borderStyle": "dashed",
                     "borderRadius": "5px",
                     "textAlign": "center",
-                    "margin": "10px",
+                    "margin": "10px 0",
                     "backgroundColor": "#e9ecef",
                 },
                 multiple=False,
             ),
-            html.Div(id="output-upload", style={"margin": "10px", "color": "#495057"}),
+            html.Div(id="output-upload", style={"margin": "10px 0", "color": "#495057"}),
             html.Div([
                 html.Label("Number of Unit Cells (x, y, z):", style={"display": "block", "marginTop": "10px"}),
-                dcc.Input(id="num-unit-cells-x", type="number", value=1, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da"}),
-                dcc.Input(id="num-unit-cells-y", type="number", value=1, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da"}),
-                dcc.Input(id="num-unit-cells-z", type="number", value=1, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da"}),
+                dcc.Input(id="num-unit-cells-x", type="number", value=1, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="num-unit-cells-y", type="number", value=1, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="num-unit-cells-z", type="number", value=1, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
             ]),
             html.Div([
                 html.Label("Rotation Angles (x, y, z):", style={"display": "block", "marginTop": "10px"}),
-                dcc.Input(id="rotation-x", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da"}),
-                dcc.Input(id="rotation-y", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da"}),
-                dcc.Input(id="rotation-z", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da"}),
+                dcc.Input(id="rotation-x", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="rotation-y", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="rotation-z", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
             ]),
             html.Div([
                 html.Label("Translation Vector (x, y, z):", style={"display": "block", "marginTop": "10px"}),
-                dcc.Input(id="translation-x", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da"}),
-                dcc.Input(id="translation-y", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da"}),
-                dcc.Input(id="translation-z", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da"}),
+                dcc.Input(id="translation-x", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="translation-y", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="translation-z", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
             ]),
             html.Div([
                 html.Label("Base Level:", style={"display": "block", "marginTop": "10px"}),
-                dcc.Input(id="base-level", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da"}),
+                dcc.Input(id="base-level", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
             ]),
             html.Div([
                 html.Label("Is Primitive:", style={"display": "block", "marginTop": "10px"}),
@@ -95,25 +96,25 @@ def display_feature(rec_lattice_clicks, cry_lattice_clicks):
             ]),
             html.Div([
                 html.Label("Target Atoms:", style={"display": "block", "marginTop": "10px"}),
-                dcc.Input(id="target-atoms", type="text", value=None, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da"}),
+                dcc.Input(id="target-atoms", type="text", value=None, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "150px"}),
             ]),
             html.Div([
                 html.Label("Site Index Spin:", style={"display": "block", "marginTop": "10px"}),
-                dcc.Input(id="site-index-spin", type="text", value=None, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da"}),
+                dcc.Input(id="site-index-spin", type="text", value=None, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "150px"}),
             ]),
             html.Div([
                 html.Label("Tolerance:", style={"display": "block", "marginTop": "10px"}),
-                dcc.Input(id="tolerance", type="number", value=0.1, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da"}),
+                dcc.Input(id="tolerance", type="number", value=0.1, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
             ]),
             html.Div([
                 html.Label("Add Supports:", style={"display": "block", "marginTop": "10px"}),
                 dcc.Checklist(id="add-supports-flag", options=[{'label': '', 'value': 'addSupports'}], value=[], style={"margin": "5px", "padding": "5px"}),
             ]),
-            html.Button("Generate STL", id="generate-stl", n_clicks=0, style={"margin": "10px", "padding": "10px 20px", "backgroundColor": "#17a2b8", "color": "white", "border": "none", "borderRadius": "5px"}),
+            html.Button("Generate STL", id="generate-stl", n_clicks=0, style={"margin": "10px 0", "padding": "10px 20px", "backgroundColor": "#17a2b8", "color": "white", "border": "none", "borderRadius": "5px"}),
             dcc.Download(id="download-stl"),
             html.Div(id="output-stl-path", style={"display": "none"}),
-            html.Div(id="output-stl", style={"margin": "10px", "height": "400px"}),
-            html.Button("Download STL", id="download-stl-btn", n_clicks=0, style={"margin": "10px", "padding": "10px 20px", "backgroundColor": "#6c757d", "color": "white", "border": "none", "borderRadius": "5px", "display": "none"}),
+            html.Div(id="output-stl", style={"margin": "10px 0", "height": "400px"}),
+            html.Button("Download STL", id="download-stl-btn", n_clicks=0, style={"margin": "10px 0", "padding": "10px 20px", "backgroundColor": "#6c757d", "color": "white", "border": "none", "borderRadius": "5px", "display": "none"}),
         ]
     elif rec_lattice_clicks > cry_lattice_clicks:
         return html.Div("Feature in progress", style={"color": "#6c757d", "textAlign": "center", "padding": "20px"})
@@ -180,7 +181,7 @@ def generate_stl(n_clicks, filename, num_x, num_y, num_z, rot_x, rot_y, rot_z, t
         )
 
         if os.path.exists(stl_file_path):
-            return stl_file_path, {"display": "block"}
+            return stl_file_path, {"display": "block", "margin": "10px 0", "padding": "10px 20px", "backgroundColor": "#6c757d", "color": "white", "border": "none", "borderRadius": "5px"}
         else:
             return "Failed to generate STL file.", {"display": "none"}
 
