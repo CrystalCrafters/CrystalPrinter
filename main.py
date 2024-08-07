@@ -1,4 +1,4 @@
-from dash import Dash, html, dcc, Input, Output, State
+from dash import Dash, html, dcc, Input, Output, State, callback_context
 import dash_vtk
 from dash_vtk.utils import to_mesh_state
 import base64
@@ -12,12 +12,14 @@ UPLOAD_DIRECTORY = "uploads"
 if not os.path.exists(UPLOAD_DIRECTORY):
     os.makedirs(UPLOAD_DIRECTORY)
 
+
 # Function to clear the upload directory
 def clear_upload_directory():
     for filename in os.listdir(UPLOAD_DIRECTORY):
         file_path = os.path.join(UPLOAD_DIRECTORY, filename)
         if os.path.isfile(file_path):
             os.remove(file_path)
+
 
 # Dash setup
 app = Dash(__name__, suppress_callback_exceptions=True)
@@ -33,15 +35,24 @@ app.layout = html.Div(
     },
     children=[
         html.Div([
-            html.H1("Crystal Lattice & Reciprocal Lattice Generator", style={"textAlign": "center", "color": "#343a40"}),
+            html.H1("Crystal Lattice & Reciprocal Lattice Generator",
+                    style={"textAlign": "center", "color": "#343a40"}),
             html.Div([
-                html.Button("Reciprocal Lattice", id="reciprocal-lattice-btn", n_clicks=0, style={"padding": "10px 20px", "margin": "5px", "backgroundColor": "#007bff", "color": "white", "border": "none", "borderRadius": "5px"}),
-                html.Button("Crystal Lattice", id="crystal-lattice-btn", n_clicks=0, style={"padding": "10px 20px", "margin": "5px", "backgroundColor": "#28a745", "color": "white", "border": "none", "borderRadius": "5px"}),
+                html.Button("Reciprocal Lattice", id="reciprocal-lattice-btn", n_clicks=0,
+                            style={"padding": "10px 20px", "margin": "5px", "backgroundColor": "#007bff",
+                                   "color": "white", "border": "none", "borderRadius": "5px"}),
+                html.Button("Crystal Lattice", id="crystal-lattice-btn", n_clicks=0,
+                            style={"padding": "10px 20px", "margin": "5px", "backgroundColor": "#28a745",
+                                   "color": "white", "border": "none", "borderRadius": "5px"}),
             ], style={"textAlign": "center", "margin": "20px 0"}),
-        ], style={"boxShadow": "0 4px 8px 0 rgba(0,0,0,0.2)", "padding": "20px", "borderRadius": "10px", "backgroundColor": "white", "margin": "20px auto", "width": "80%"}),
-        html.Div(id="feature-content", style={"margin": "10px auto", "padding": "20px", "backgroundColor": "white", "borderRadius": "10px", "boxShadow": "0 4px 8px 0 rgba(0,0,0,0.2)", "width": "80%"})
+        ], style={"boxShadow": "0 4px 8px 0 rgba(0,0,0,0.2)", "padding": "20px", "borderRadius": "10px",
+                  "backgroundColor": "white", "margin": "20px auto", "width": "80%"}),
+        html.Div(id="feature-content",
+                 style={"margin": "10px auto", "padding": "20px", "backgroundColor": "white", "borderRadius": "10px",
+                        "boxShadow": "0 4px 8px 0 rgba(0,0,0,0.2)", "width": "80%"})
     ],
 )
+
 
 @app.callback(
     Output("feature-content", "children"),
@@ -70,56 +81,93 @@ def display_feature(rec_lattice_clicks, cry_lattice_clicks):
             html.Div(id="output-upload", style={"margin": "10px 0", "color": "#495057"}),
             html.Div([
                 html.Label("Number of Unit Cells (x, y, z):", style={"display": "block", "marginTop": "10px"}),
-                dcc.Input(id="num-unit-cells-x", type="number", value=1, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
-                dcc.Input(id="num-unit-cells-y", type="number", value=1, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
-                dcc.Input(id="num-unit-cells-z", type="number", value=1, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="num-unit-cells-x", type="number", value=1,
+                          style={"margin": "5px", "padding": "5px", "borderRadius": "5px",
+                                 "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="num-unit-cells-y", type="number", value=1,
+                          style={"margin": "5px", "padding": "5px", "borderRadius": "5px",
+                                 "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="num-unit-cells-z", type="number", value=1,
+                          style={"margin": "5px", "padding": "5px", "borderRadius": "5px",
+                                 "border": "1px solid #ced4da", "width": "80px"}),
             ]),
             html.Div([
                 html.Label("Rotation Angles (x, y, z):", style={"display": "block", "marginTop": "10px"}),
-                dcc.Input(id="rotation-x", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
-                dcc.Input(id="rotation-y", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
-                dcc.Input(id="rotation-z", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="rotation-x", type="number", value=0,
+                          style={"margin": "5px", "padding": "5px", "borderRadius": "5px",
+                                 "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="rotation-y", type="number", value=0,
+                          style={"margin": "5px", "padding": "5px", "borderRadius": "5px",
+                                 "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="rotation-z", type="number", value=0,
+                          style={"margin": "5px", "padding": "5px", "borderRadius": "5px",
+                                 "border": "1px solid #ced4da", "width": "80px"}),
             ]),
             html.Div([
                 html.Label("Translation Vector (x, y, z):", style={"display": "block", "marginTop": "10px"}),
-                dcc.Input(id="translation-x", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
-                dcc.Input(id="translation-y", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
-                dcc.Input(id="translation-z", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="translation-x", type="number", value=0,
+                          style={"margin": "5px", "padding": "5px", "borderRadius": "5px",
+                                 "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="translation-y", type="number", value=0,
+                          style={"margin": "5px", "padding": "5px", "borderRadius": "5px",
+                                 "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="translation-z", type="number", value=0,
+                          style={"margin": "5px", "padding": "5px", "borderRadius": "5px",
+                                 "border": "1px solid #ced4da", "width": "80px"}),
             ]),
             html.Div([
                 html.Label("Base Level:", style={"display": "block", "marginTop": "10px"}),
-                dcc.Input(id="base-level", type="number", value=0, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="base-level", type="number", value=0,
+                          style={"margin": "5px", "padding": "5px", "borderRadius": "5px",
+                                 "border": "1px solid #ced4da", "width": "80px"}),
             ]),
             html.Div([
                 html.Label("Is Primitive:", style={"display": "block", "marginTop": "10px"}),
-                dcc.Checklist(id="is-primitive", options=[{'label': '', 'value': 'isPrimitive'}], value=[], style={"margin": "5px", "padding": "5px"}),
+                dcc.Checklist(id="is-primitive", options=[{'label': '', 'value': 'isPrimitive'}], value=[],
+                              style={"margin": "5px", "padding": "5px"}),
             ]),
             html.Div([
                 html.Label("Target Atoms:", style={"display": "block", "marginTop": "10px"}),
-                dcc.Input(id="target-atoms", type="text", value=None, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "150px"}),
+                dcc.Input(id="target-atoms", type="text", value=None,
+                          style={"margin": "5px", "padding": "5px", "borderRadius": "5px",
+                                 "border": "1px solid #ced4da", "width": "150px"}),
             ]),
             html.Div([
-                html.Label("Site Index Spin:", style={"display": "block", "marginTop": "10px"}),
-                dcc.Input(id="site-index-spin", type="text", value=None, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "150px"}),
+                html.Label("Site Index Spin (format: index1:[x1,y1,z1],index2:[x2,y2,z2],...):",
+                           style={"display": "block", "marginTop": "10px"}),
+                dcc.Input(id="site-index-spin", type="text", value=None,
+                          style={"margin": "5px", "padding": "5px", "borderRadius": "5px",
+                                 "border": "1px solid #ced4da", "width": "300px"}),
             ]),
             html.Div([
                 html.Label("Tolerance:", style={"display": "block", "marginTop": "10px"}),
-                dcc.Input(id="tolerance", type="number", value=0.1, style={"margin": "5px", "padding": "5px", "borderRadius": "5px", "border": "1px solid #ced4da", "width": "80px"}),
+                dcc.Input(id="tolerance", type="number", value=0.1,
+                          style={"margin": "5px", "padding": "5px", "borderRadius": "5px",
+                                 "border": "1px solid #ced4da", "width": "80px"}),
             ]),
             html.Div([
                 html.Label("Add Supports:", style={"display": "block", "marginTop": "10px"}),
-                dcc.Checklist(id="add-supports-flag", options=[{'label': '', 'value': 'addSupports'}], value=[], style={"margin": "5px", "padding": "5px"}),
+                dcc.Checklist(id="add-supports-flag", options=[{'label': '', 'value': 'addSupports'}], value=[],
+                              style={"margin": "5px", "padding": "5px"}),
             ]),
-            html.Button("Generate STL", id="generate-stl", n_clicks=0, style={"margin": "10px 0", "padding": "10px 20px", "backgroundColor": "#17a2b8", "color": "white", "border": "none", "borderRadius": "5px"}),
+            html.Button("Generate STL", id="generate-stl", n_clicks=0,
+                        style={"margin": "10px 0", "padding": "10px 20px", "backgroundColor": "#17a2b8",
+                               "color": "white", "border": "none", "borderRadius": "5px"}),
+            html.Button("Test Print", id="test-print-btn", n_clicks=0,
+                        style={"margin": "10px 0", "padding": "10px 20px", "backgroundColor": "#ffc107",
+                               "color": "black", "border": "none", "borderRadius": "5px"}),
             dcc.Download(id="download-stl"),
             html.Div(id="output-stl-path", style={"display": "none"}),
             html.Div(id="output-stl", style={"margin": "10px 0", "height": "400px"}),
-            html.Button("Download STL", id="download-stl-btn", n_clicks=0, style={"margin": "10px 0", "padding": "10px 20px", "backgroundColor": "#6c757d", "color": "white", "border": "none", "borderRadius": "5px", "display": "none"}),
+            html.Button("Download STL", id="download-stl-btn", n_clicks=0,
+                        style={"margin": "10px 0", "padding": "10px 20px", "backgroundColor": "#6c757d",
+                               "color": "white", "border": "none", "borderRadius": "5px", "display": "none"}),
         ]
     elif rec_lattice_clicks > cry_lattice_clicks:
         return html.Div("Feature in progress", style={"color": "#6c757d", "textAlign": "center", "padding": "20px"})
 
     return "Select an option to proceed."
+
 
 @app.callback(
     Output("output-upload", "children"),
@@ -136,36 +184,71 @@ def save_upload(contents, filename):
         return f"Uploaded file: {filename}"
     return "No file uploaded yet."
 
+
 @app.callback(
     [Output("output-stl-path", "children"),
-     Output("download-stl-btn", "style")],
-    Input("generate-stl", "n_clicks"),
-    State("upload-cif", "filename"),
-    State("num-unit-cells-x", "value"),
-    State("num-unit-cells-y", "value"),
-    State("num-unit-cells-z", "value"),
-    State("rotation-x", "value"),
-    State("rotation-y", "value"),
-    State("rotation-z", "value"),
-    State("translation-x", "value"),
-    State("translation-y", "value"),
-    State("translation-z", "value"),
-    State("base-level", "value"),
-    State("is-primitive", "value"),
-    State("target-atoms", "value"),
-    State("site-index-spin", "value"),
-    State("tolerance", "value"),
-    State("add-supports-flag", "value"))
-def generate_stl(n_clicks, filename, num_x, num_y, num_z, rot_x, rot_y, rot_z, trans_x, trans_y, trans_z, base_level, is_primitive, target_atoms, site_index_spin, tolerance, add_supports_flag):
-    if n_clicks > 0 and filename:
+     Output("download-stl-btn", "style"),
+     Output("download-stl", "data")],
+    [Input("generate-stl", "n_clicks"),
+     Input("test-print-btn", "n_clicks"),
+     Input("download-stl-btn", "n_clicks")],
+    [State("upload-cif", "filename"),
+     State("num-unit-cells-x", "value"),
+     State("num-unit-cells-y", "value"),
+     State("num-unit-cells-z", "value"),
+     State("rotation-x", "value"),
+     State("rotation-y", "value"),
+     State("rotation-z", "value"),
+     State("translation-x", "value"),
+     State("translation-y", "value"),
+     State("translation-z", "value"),
+     State("base-level", "value"),
+     State("is-primitive", "value"),
+     State("target-atoms", "value"),
+     State("site-index-spin", "value"),
+     State("tolerance", "value"),
+     State("add-supports-flag", "value"),
+     State("output-stl-path", "children")]
+)
+def handle_stl_operations(generate_clicks, test_print_clicks, download_clicks, filename, num_x, num_y, num_z, rot_x,
+                          rot_y, rot_z, trans_x, trans_y, trans_z, base_level, is_primitive, target_atoms,
+                          site_index_spin, tolerance, add_supports_flag, stl_path):
+    ctx = callback_context
+    if not ctx.triggered:
+        return "", {"display": "none"}, None
+
+    button_id = ctx.triggered[0]['prop_id'].split('.')[0]
+    if button_id == "generate-stl" and filename:
         cif_path = os.path.join(UPLOAD_DIRECTORY, filename)
+    elif button_id == "test-print-btn":
+        cif_path = os.path.join(UPLOAD_DIRECTORY, "Yb2Si2O7.cif")
+        num_x, num_y, num_z = 1, 1, 1
+        rot_x, rot_y, rot_z = 0, 0, 0
+        trans_x, trans_y, trans_z = 0, 0, 0
+        base_level = 0
+        is_primitive = []
+        target_atoms = None
+        site_index_spin = None
+        tolerance = 0.1
+        add_supports_flag = []
+
+    if button_id in ["generate-stl", "test-print-btn"]:
         num_unit_cells = [num_x, num_y, num_z]
         rotation_angles = [rot_x, rot_y, rot_z]
         translation_vector = [trans_x, trans_y, trans_z]
         is_primitive = True if 'isPrimitive' in is_primitive else False
         target_atoms = target_atoms.split(',') if target_atoms else None
-        site_index_spin = site_index_spin.split(',') if site_index_spin else None
         add_supports_flag = True if 'addSupports' in add_supports_flag else False
+
+        # Parse site_index_spin
+        site_index_spin_dict = {}
+        if site_index_spin:
+            try:
+                for item in site_index_spin.split(','):
+                    index, spin = item.split(':')
+                    site_index_spin_dict[int(index)] = list(map(float, spin.strip('[]').split(',')))
+            except Exception as e:
+                return f"Error parsing site_index_spin: {e}", {"display": "none"}, None
 
         stl_file_path = generate_stl_from_params(
             cif_path,
@@ -175,28 +258,24 @@ def generate_stl(n_clicks, filename, num_x, num_y, num_z, rot_x, rot_y, rot_z, t
             base_level,
             is_primitive,
             target_atoms,
-            site_index_spin,
+            site_index_spin_dict,
             tolerance,
             add_supports_flag
         )
 
         if os.path.exists(stl_file_path):
-            return stl_file_path, {"display": "block", "margin": "10px 0", "padding": "10px 20px", "backgroundColor": "#6c757d", "color": "white", "border": "none", "borderRadius": "5px"}
+            return stl_file_path, {"display": "block", "margin": "10px 0", "padding": "10px 20px",
+                                   "backgroundColor": "#6c757d", "color": "white", "border": "none",
+                                   "borderRadius": "5px"}, None
         else:
-            return "Failed to generate STL file.", {"display": "none"}
+            return "Failed to generate STL file.", {"display": "none"}, None
 
-    return "Click 'Generate STL' to create the STL file.", {"display": "none"}
+    if button_id == "download-stl-btn" and stl_path and os.path.exists(stl_path):
+        return stl_path, {"display": "block", "margin": "10px 0", "padding": "10px 20px", "backgroundColor": "#6c757d",
+                          "color": "white", "border": "none", "borderRadius": "5px"}, dcc.send_file(stl_path)
 
-@app.callback(
-    Output("download-stl", "data"),
-    Input("download-stl-btn", "n_clicks"),
-    State("output-stl-path", "children"),
-    prevent_initial_call=True
-)
-def download_stl(n_clicks, stl_file_path):
-    if n_clicks > 0 and stl_file_path and os.path.exists(stl_file_path):
-        return dcc.send_file(stl_file_path)
-    return None
+    return "", {"display": "none"}, None
+
 
 @app.callback(
     Output("output-stl", "children"),
@@ -244,6 +323,7 @@ def render_stl(stl_file_path, base_level):
         return content
 
     return "No STL file to display."
+
 
 if __name__ == "__main__":
     app.run_server(debug=True)

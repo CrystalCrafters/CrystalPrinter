@@ -3,15 +3,7 @@ import pyvista as pv
 from cif_reader import get_structure_with_cif, bond_by_nearest_neighbors
 from geometry_processor import add_supports, rotate_structure, translate_structure
 import numpy as np
-from stl import mesh
 
-# Example 1 usage
-file_path = 'Yb2Si2O7.cif'
-stl_file_path = 'Yb2Si2O7.stl'
-num_unit_cells = [1, 1, 1]  # 3 unit cells in X, 1 in Y and 1 in Z
-new_min, new_max = 0.3, 1.5  # Define the new scale
-
-# Specify radius for atoms and bonds
 atomic_radii = {
     "H": 53, "He": 31, "Li": 167, "Be": 112, "B": 87,
     "C": 67, "N": 56, "O": 48, "F": 42, "Ne": 38,
@@ -39,28 +31,23 @@ atomic_radii = {
     "Lv": None, "Ts": None, "Og": None, "": 70,
 }
 
-# Filter out None values and find the min and max values
 filtered_radii = {k: v for k, v in atomic_radii.items() if v is not None}
 min_radii = min(filtered_radii.values())
 max_radii = max(filtered_radii.values())
 
+new_min, new_max = 0.3, 1.5
 
-# Scale function
 def scale_radius(radius):
     return new_min + (new_max - new_min) * (radius - min_radii) / (max_radii - min_radii)
 
-
-# Apply the scale transformation
 atomic_radii = {atom: scale_radius(radius) if radius is not None else None for atom, radius in atomic_radii.items()}
 bond_radius = 0.25
-
 
 def create_sphere(position, radius=0.5, color=(0, 0, 0)):
     sphere = trimesh.creation.icosphere(radius=radius)
     sphere.apply_translation(position)
     sphere.visual.vertex_colors = np.array([color] * len(sphere.vertices), dtype=np.uint8)
     return sphere
-
 
 def create_cylinder(start, end, radius=0.1):
     vec = np.array(end) - np.array(start)
@@ -73,34 +60,21 @@ def create_cylinder(start, end, radius=0.1):
     cylinder.apply_translation(midpoint)
     return cylinder
 
-
 def create_arrow(start, direction, length=2.0, shaft_radius=0.2, tip_radius=0.4, tip_length=0.8):
-    # Convert direction to float to avoid casting errors
     direction = np.array(direction, dtype=float)
-
-    # Normalize direction vector
     direction /= np.linalg.norm(direction)
 
-    # Create the cylinder (shaft of the arrow)
     cylinder = trimesh.creation.cylinder(radius=shaft_radius, height=length)
     cylinder.apply_translation([0, 0, length / 2])
 
-    # Create the cone (tip of the arrow)
     cone = trimesh.creation.cone(radius=tip_radius, height=tip_length)
-    cone.apply_translation([0, 0, length*0.9 + tip_length / 2])
+    cone.apply_translation([0, 0, length * 0.9 + tip_length / 2])
 
-    # Combine cylinder and cone
     arrow = trimesh.util.concatenate(cylinder, cone)
-
-    # Align arrow direction
     align_matrix = trimesh.geometry.align_vectors([0, 0, 1], direction)
     arrow.apply_transform(align_matrix)
-
-    # Translate the arrow to the start position
     arrow.apply_translation(start)
-
     return arrow
-
 
 def atoms_and_bonds_to_mesh(structure):
     atoms_and_bonds_mesh = trimesh.Trimesh()
@@ -119,10 +93,10 @@ def atoms_and_bonds_to_mesh(structure):
 
         if 'magnetic_spin' in atom and atom['magnetic_spin']['direction'] != [0, 0, 0]:
             direction = np.array(atom['magnetic_spin']['direction'])
-            spin_length = atom_radius * 1.5  # Scale the arrow length according to the atom's radius
-            spin_shaft_radius = atom_radius * 0.15  # Scale the shaft radius
-            spin_tip_radius = atom_radius * 0.3  # Scale the tip radius
-            spin_tip_length = atom_radius * 0.3  # Scale the tip length
+            spin_length = atom_radius * 1.5
+            spin_shaft_radius = atom_radius * 0.15
+            spin_tip_radius = atom_radius * 0.3
+            spin_tip_length = atom_radius * 0.3
             magnetic_spins.append((atom['cartesian_position'], direction, spin_length, spin_shaft_radius,
                                    spin_tip_radius, spin_tip_length))
 
@@ -133,34 +107,29 @@ def atoms_and_bonds_to_mesh(structure):
 
     return atoms_and_bonds_mesh
 
-
 def export_to_stl(mesh, file_path):
     mesh.export(file_path)
 
-
 unique_atoms = get_structure_with_cif(
-    file_path=file_path,
-    num_unit_cells=num_unit_cells,
-    magnetic_spin_atoms={"Yb": [90, 0, 0]}  # Example of specifying a direction vector for Yb atoms
+    file_path='Yb2Si2O7.cif',
+    num_unit_cells=[1.5, 1, 2],
+    target_atoms=["Yb"],
+    site_index_spin={0: [0, 0, 1]}
 )
 
-# Ensure unique_atoms is not None before proceeding
 if unique_atoms is not None:
     unique_atoms = rotate_structure(unique_atoms, [0, 0, 0])
     unique_atoms = translate_structure(unique_atoms, [0, 0, 2])
     unique_atoms = rotate_structure(unique_atoms, [10, 10, 0])
-    unique_atoms = bond_by_nearest_neighbors(unique_atoms, tolerance=0.1)
-    meshh = atoms_and_bonds_to_mesh(unique_atoms)
+    unique_atoms = bond_by_nearest_neighbors(unique_atoms, tolerance=0.45)
+    mesh = atoms_and_bonds_to_mesh(unique_atoms)
 
-    # Add supports
-    # meshh = add_supports(meshh, unique_atoms, atomic_radii, base_level=0.0)
-
-    pv_mesh = pv.wrap(meshh)
+    pv_mesh = pv.wrap(mesh)
     plotter = pv.Plotter()
     plotter.add_mesh(pv_mesh, color=None)
-    plotter.show_axes()  # Show axes in the plot
+    plotter.show_axes()
     plotter.show()
 
-    export_to_stl(meshh, stl_file_path)
+    export_to_stl(mesh, 'Yb2Si2O7.stl')
 else:
     print("Error: unique_atoms is None.")
