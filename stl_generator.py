@@ -1,6 +1,6 @@
 import trimesh
 import pyvista as pv
-from cif_reader import get_structure_with_cif, bond_by_nearest_neighbors
+from cif_reader import get_structure_with_cif, bond_by_proximity, bond_by_crystalNN
 from geometry_processor import add_supports, rotate_structure, translate_structure
 import numpy as np
 
@@ -91,7 +91,7 @@ def atoms_and_bonds_to_mesh(structure):
             bond_cylinder = create_cylinder(start, end, radius=bond_radius)
             atoms_and_bonds_mesh += bond_cylinder
 
-        if 'magnetic_spin' in atom and atom['magnetic_spin']['direction'] != [0, 0, 0]:
+        if 'magnetic_spin' in atom and 'direction' in atom['magnetic_spin'] and atom['magnetic_spin']['direction'] != [0, 0, 0]:
             direction = np.array(atom['magnetic_spin']['direction'])
             spin_length = atom_radius * 1.5
             spin_shaft_radius = atom_radius * 0.15
@@ -110,26 +110,28 @@ def atoms_and_bonds_to_mesh(structure):
 def export_to_stl(mesh, file_path):
     mesh.export(file_path)
 
+base_level=0
+
 unique_atoms = get_structure_with_cif(
     file_path='Yb2Si2O7.cif',
-    num_unit_cells=[1.5, 1, 2],
-    target_atoms=["Yb"],
-    site_index_spin={0: [0, 0, 1]}
+    num_unit_cells=[1, 1, 1],
+    # target_atoms=["Yb"],
+    # site_index_spin={0: [0, 0, 1]}
+    use_reciprocal=True
 )
 
 if unique_atoms is not None:
     unique_atoms = rotate_structure(unique_atoms, [0, 0, 0])
     unique_atoms = translate_structure(unique_atoms, [0, 0, 2])
     unique_atoms = rotate_structure(unique_atoms, [10, 10, 0])
-    unique_atoms = bond_by_nearest_neighbors(unique_atoms, tolerance=0.45)
+    # unique_atoms = bond_by_proximity(unique_atoms, tolerance=0.1)
     mesh = atoms_and_bonds_to_mesh(unique_atoms)
-
     pv_mesh = pv.wrap(mesh)
     plotter = pv.Plotter()
     plotter.add_mesh(pv_mesh, color=None)
     plotter.show_axes()
     plotter.show()
 
-    export_to_stl(mesh, 'Yb2Si2O7.stl')
+    export_to_stl(mesh,'Yb2Si2O7.stl')
 else:
     print("Error: unique_atoms is None.")

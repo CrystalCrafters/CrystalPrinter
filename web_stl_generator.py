@@ -3,7 +3,7 @@ import numpy as np
 import trimesh
 from ase.io import read
 import pyvista as pv
-from cif_reader import get_structure_with_cif, bond_by_nearest_neighbors
+from cif_reader import get_structure_with_cif, bond_by_proximity
 from geometry_processor import add_supports, rotate_structure, translate_structure
 
 atomic_radii = {
@@ -109,7 +109,7 @@ def generate_stl_from_params(file_path, num_unit_cells, rotation_angles, transla
     unique_atoms = get_structure_with_cif(file_path=file_path, num_unit_cells=num_unit_cells, is_primitive=is_primitive, target_atoms=target_atoms, site_index_spin=site_index_spin)
     unique_atoms = rotate_structure(unique_atoms, rotation_angles)
     unique_atoms = translate_structure(unique_atoms, translation_vector)
-    unique_atoms = bond_by_nearest_neighbors(unique_atoms, tolerance=tolerance)
+    unique_atoms = bond_by_proximity(unique_atoms, tolerance=tolerance)
     mesh = atoms_and_bonds_to_mesh(unique_atoms)
 
     if add_supports_flag:
